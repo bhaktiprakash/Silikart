@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const studentAcademicSchema = new mongoose.Schema({
+const productSchema = new mongoose.Schema({
     serial: {
         type: String,
         required: true,
@@ -21,5 +21,5 @@ const studentAcademicSchema = new mongoose.Schema({
     
 })
 
-const studentAcademic = mongoose.model("studentAcademic", studentAcademicSchema)
-module.exports = studentAcademic
+const product = mongoose.model("product", productSchema)
+module.exports = product

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const studentInfo = require('../model/studentInfo.model');
-const studentAcademic = require('../model/studentAcademic.model');
+const studentAcademic = require('../model/product.model');
 
 async function allStudentsInfo(req, res){
     try {
