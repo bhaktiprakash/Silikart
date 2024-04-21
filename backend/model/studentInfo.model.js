@@ -5,34 +5,19 @@ const studentSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    rollno: {
-        type: Number,
-        required: true,
-        unique: true
-    },
-    mobile: {
+    sic: {
         type: String,
         required: true,
         unique: true
     },
-    email: {
+    yearOfAdm: {
         type: String,
         required: true,
         unique: true
     },
-    address: {
-        city: {
-            type: String,
-            required: true
-        },
-        state: {
-            type: String,
-            required: true
-        },
-        pin: {
-            type: String,
-            required: true
-        }
+    branch: {
+        type: String,
+        required: true
     }
 })
 

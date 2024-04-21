@@ -1,20 +1,20 @@
 const mongoose = require('mongoose')
 
 const studentAcademicSchema = new mongoose.Schema({
-    rollno: {
-        type: Number,
+    serial: {
+        type: String,
         required: true,
         unique: true
     },
-    program: {
+    name: {
         type: String,
         required: true
     },
-    branch: {
-        type: String,
+    availability: {
+        type: Boolean,
         required: true
     },
-    cgpa: {
+    image: {
         type: String,
         required: true
     }
