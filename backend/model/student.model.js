@@ -21,5 +21,5 @@ const studentSchema = new mongoose.Schema({
     }
 })
 
-const studentInfo = mongoose.model("studentInfo", studentSchema)
-module.exports = studentInfo
+const student = mongoose.model("student", studentSchema)
+module.exports = student

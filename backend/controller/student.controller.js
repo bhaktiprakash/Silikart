@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
-const studentInfo = require('../model/studentInfo.model');
+const student = require('../model/student.model');
 const studentAcademic = require('../model/product.model');
 
 async function allStudentsInfo(req, res){
     try {
-        let students = await studentInfo.find()
+        let students = await student.find()
         res.status(200).json(students)
     } catch (error) {
         console.log(error);
@@ -15,7 +15,7 @@ async function allStudentsInfo(req, res){
 
 async function addStudent(req,res){
     try {
-        let newStudent = await studentInfo.create(req.body)
+        let newStudent = await student.create(req.body)
         res.status(201).json(newStudent)
     } catch (error) {
         console.log(error);
@@ -27,7 +27,7 @@ async function getStudentById(req, res){
     try {
         let { roll } = req.params
         console.log(req.params);
-        let student = await studentInfo.find({rollno: roll})
+        let student = await student.find({rollno: roll})
         if(student.length >0){
             res.status(200).json(student)
         } else {
@@ -43,7 +43,7 @@ async function updateStudent(req, res){
     try {
         let { roll } = req.params
         let data = req.body
-        let student = await studentInfo.findOneAndUpdate({rollno: roll}, data, {new: true})
+        let student = await student.findOneAndUpdate({rollno: roll}, data, {new: true})
         res.status(200).json(student)
     } catch (error) {
         console.log(error);
@@ -54,7 +54,7 @@ async function updateStudent(req, res){
 async function deleteStudent(req, res){
     try {
         let { roll } = req.params
-        let student = await studentInfo.findOneAndDelete({rollno: roll})
+        let student = await student.findOneAndDelete({rollno: roll})
         res.status(200).json(student)
     } catch (error) {
         console.log(error);
@@ -64,7 +64,7 @@ async function deleteStudent(req, res){
 
 async function allDetails(req, res){
     try {
-        let data = await studentInfo.aggregate([
+        let data = await student.aggregate([
             {
                 $lookup: {
                     from: "studentacademics",
@@ -86,7 +86,7 @@ async function insertBoth(req,res){
         const {
             name,rollno,mobile,email,address,program,branch,cgpa
         } = req.body
-        let newStudent = await studentInfo.create({
+        let newStudent = await student.create({
             name: name,
             rollno: rollno,
             mobile: mobile,

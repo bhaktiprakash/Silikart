@@ -2,17 +2,17 @@ const mongoose = require('mongoose');
 
 const product = require('../model/product.model')
 
-async function addStudent(req,res){
+async function addProduct(req,res){
     try {
-        let newStudent = await product.create(req.body)
-        res.status(201).json(newStudent)
+        let newProduct = await product.create(req.body)
+        res.status(201).json(newProduct)
     } catch (error) {
         console.log(error);
         res.status(400).json({"message": error.message})
     }
 }
 
-async function allStudentsInfo(req, res){
+async function allProducts(req, res){
     try {
         let students = await product.find()
         res.status(200).json(students)
@@ -22,7 +22,7 @@ async function allStudentsInfo(req, res){
     }
 }
 
-async function getStudentById(req, res){
+async function getProductById(req, res){
     try {
         let { roll } = req.params
         console.log(req.params);
@@ -38,7 +38,7 @@ async function getStudentById(req, res){
     }
 }
 
-async function updateStudent(req, res){
+async function updateProduct(req, res){
     try {
         let { roll } = req.params
         let data = req.body
@@ -50,11 +50,11 @@ async function updateStudent(req, res){
     }
 }
 
-async function deleteStudent(req, res){
+async function deleteProduct(req, res){
     try {
-        let { roll } = req.params
-        let student = await product.findOneAndDelete({rollno: roll})
-        res.status(200).json(student)
+        let { serial } = req.params
+        let product = await product.findOneAndDelete({serial : serial})
+        res.status(200).json(product)
     } catch (error) {
         console.log(error);
         res.status(500).json({"message": error.message})
@@ -62,10 +62,10 @@ async function deleteStudent(req, res){
 }
 
 module.exports = {
-    addStudent,
-    allStudentsInfo,
-    getStudentById,
-    updateStudent,
-    deleteStudent
+    addProduct,
+    allProducts,
+    getProductById,
+    updateProduct,
+    deleteProduct
 
 }
