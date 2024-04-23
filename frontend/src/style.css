@@ -1,0 +1,10 @@
+.heading{
+    color: red;
+}
+
+.pcard{
+    border: 1px solid black;
+    margin: 3px;
+    padding: 5px;
+    width: 150px;
+}
