@@ -1,7 +1,7 @@
 const express = require('express')
 const dbConnect = require('./db/db')
-const studentInfoRouter = require('./route/studentInfo.router')
-const studentAcademicRouter = require('./route/studentAcademic.router')
+const studentInfoRouter = require('./router/studentInfo.router')
+const studentAcademicRouter = require('./router/studentAcademic.router')
 
 const app = express()
 
