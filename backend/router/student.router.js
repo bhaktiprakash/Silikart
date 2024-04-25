@@ -8,7 +8,7 @@ const{
     deleteStudent,
     allDetails,
     insertBoth
-} = require('../controller/studentInfo.controller')
+} = require('../controller/student.controller')
 
 const studentInfoRouter = express.Router()
 
