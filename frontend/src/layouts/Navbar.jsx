@@ -4,7 +4,7 @@ const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg bg-dark fixed-top" data-bs-theme= "dark">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">
+                <a className="navbar-brand" href="/">
                     Silikart
                 </a>
                 <button
@@ -26,7 +26,7 @@ const Navbar = () => {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/addStudent">
+                            <Link className="nav-link" to="/products">
                                 Products
                             </Link>
                         </li>

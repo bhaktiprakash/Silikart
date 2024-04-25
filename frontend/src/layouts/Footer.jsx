@@ -2,8 +2,8 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div>
-   <p> Silikart  &copy; 2024</p>
+    <div className='bg-dark text-light'>
+   <p className='text-center'> Silikart  &copy; 2024</p>
     </div>
   )
 }
