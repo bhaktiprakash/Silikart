@@ -11,10 +11,10 @@ const {
 const productRouter = express.Router()
 
 productRouter.get("/", allProducts)
-productRouter.get("/:roll", getProductById)
+productRouter.get("/:serial", getProductById)
 productRouter.post("/", addProduct)
-productRouter.put("/:roll", updateProduct)
-productRouter.delete("/:roll", deleteProduct)
+productRouter.put("/:serial", updateProduct)
+productRouter.delete("/:serial", deleteProduct)
 
 
 module.exports = productRouter

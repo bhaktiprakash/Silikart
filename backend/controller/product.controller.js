@@ -24,11 +24,11 @@ async function allProducts(req, res){
 
 async function getProductById(req, res){
     try {
-        let { roll } = req.params
+        let { serial } = req.params
         console.log(req.params);
-        let student = await product.find({rollno: roll})
-        if(student.length >0){
-            res.status(200).json(student)
+        let products = await product.find({serial: serial})
+        if(products.length >0){
+            res.status(200).json(products)
         } else {
             res.status(404).json({"message": "Data not found"})
         }
