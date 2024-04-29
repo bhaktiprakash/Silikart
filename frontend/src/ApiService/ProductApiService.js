@@ -2,11 +2,11 @@ import axios from "axios"
 
 class ProdcutApiService {
     constructor(){
-        this.api = "http://localhost:5173/"
+        this.api = "http://localhost:5000"
     }
     async getProductInfo(){
         try {
-            const res = await axios.get(this.api+"/products")
+            const res = await axios.get(this.api+"/product")
             console.log(res.data);
             return {data:res.data, status:true};
         } catch (error) {
@@ -17,5 +17,5 @@ class ProdcutApiService {
 
 }
 
-const ProdcutApiService = new ProdcutApiService()
-export default ProdcutApiService
+const ProductApiService = new ProdcutApiService()
+export default ProductApiService
