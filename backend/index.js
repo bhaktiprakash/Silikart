@@ -1,7 +1,7 @@
 const express = require('express')
 const dbConnect = require('./db/db')
-const studentInfoRouter = require('./route/studentInfo.router')
-const studentAcademicRouter = require('./route/studentAcademic.router')
+const productRouter = require('./router/product.router')
+// const studentAcademicRouter = require('./router/product.router')
 
 const app = express()
 
@@ -9,8 +9,8 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-app.use("/studentInfo", studentInfoRouter)
-app.use("/studentAcademic", studentAcademicRouter)
+app.use("/product", productRouter)
+// app.use("/studentAcademic", studentAcademicRouter)
 
 
 app.get("/", (req, res)=>{
