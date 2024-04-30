@@ -4,7 +4,9 @@ import "bootstrap/dist/js/bootstrap.bundle.js"
 import "./style.css"
 import './App.css'
 import Home from "./pages/Home"
+
 import GetProductDetails from './pages/GetProductDetails'
+
 
 import Layout from "./layouts/Layout"
 

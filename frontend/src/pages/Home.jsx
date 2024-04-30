@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import ProductApiService from '../ApiService/ProductApiService'
 import ProductCard from '../components/ProductCard'
+import Carousal from '../components/Carousal'
 import '../style.css'
-
+import '../App.css'
 const Home = () => {
   // const [products, setProducts] = useState(null);
 
@@ -28,6 +29,7 @@ const Home = () => {
     <>
     {/* intro */}
     <div className='container p-2 m-3'>
+      <Carousal/>
       <div className='row'>
         <div className="col-md-8">
           <img src="https://img.freepik.com/free-vector/business-team-brainstorm-idea-lightbulb-from-jigsaw-working-team-collaboration-enterprise-cooperation-colleagues-mutual-assistance-concept-pinkish-coral-bluevector-isolated-illustration_335657-1651.jpg?size=626&ext=jpg&ga=GA1.1.1224184972.1714003200&semt=sph" alt="" />

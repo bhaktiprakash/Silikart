@@ -1,0 +1,14 @@
+.carousal{
+    width: 100%;
+    height:1000px;
+  }
+  /* Carousal.css */
+  .carousel-item {
+    height: 100vh; /* Set height to cover the entire viewport height */
+  }
+  
+  .carousal-image {
+    object-fit: cover; /* Ensure the image covers the entire container */
+  }
+  
+  
