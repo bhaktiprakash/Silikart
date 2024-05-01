@@ -1,28 +1,24 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const ProductCard = ({product}) => {
-    const {serial,name,availability,image} = product
-    const availabilityText = availability ? 'True' : 'False';
-    console.log(availability);
-    return(
-<>
-            <div className="card m-1 p-3" style={{height:"350px"}}>
-            <img src={image} className="card-img-top img-fluid" alt="..." style={{height: "200px"}}/>
-                <div className="card-body">
-                    <h5 className="card-title">{name}</h5>
-                    <h6 className="card-subtitle mb-2 text-body-secondary">Availability: {availabilityText}</h6>
-                    
-                    <Link to="#" className="card-link">Card link</Link>
-                    <Link to="#" className="card-link">Another link</Link>
+const ProductCard = ({ product }) => {
+    const { serial, name, availability, image } = product;
+    const availabilityText = availability ? 'Available' : 'Not Available';
+
+    return (
+        <div className="card m-2 product-card" style={{ width: '17rem' }}>
+            <img src={image} className="card-img-top" alt="Product" style={{ height: '300px' }} />
+            <div className="card-body">
+                <h5 className="card-title fs-4 fw-semibold">{name}</h5>
+                <p className="card-text">Serial: {serial}</p>
+                <p className="card-text fw-bold fst-italic">Availability: {availabilityText}</p>
+                <div className="d-grid gap-2">
+                    <Link to="#" className="btn btn-dark">View Details</Link>
+                    <Link to="#" className="btn btn-success">Add to Cart</Link>
                 </div>
             </div>
-            
-        
-        
-        </>
-    )
-}
+        </div>
+    );
+};
 
-export default ProductCard
-
+export default ProductCard;
