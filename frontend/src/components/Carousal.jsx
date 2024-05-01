@@ -1,7 +1,7 @@
 import React from 'react';
 import image1 from "../images/carousal1.jpg";
 import image2 from "../images/carousal2.jpg";
-import image3 from "../images/carousal3.jpg";
+import image3 from "../images/carousal5.jpg";
  
 const Carousal = () => {
     return (
@@ -17,9 +17,17 @@ const Carousal = () => {
                     <img src={image3} className="d-block w-100 carousal-image" alt="Slide 3" />
                 </div>
             </div>
+            <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Previous</span>
+            </button>
+            <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Next</span>
+            </button>
+           
         </div>
         
     );
 }
-
 export default Carousal;

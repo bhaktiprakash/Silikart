@@ -31,7 +31,7 @@ const GetProductDetails = () => {
   if(!products) return <p>No products available</p>;
   return (
     <div>
-      <h2 className='shadow-sm p-3 mb-5 text-center rounded'>Product Details</h2>
+      <h2 className='shadow-sm fw-bold p-3 mb-5 text-center rounded'> ALL PRODUCTS </h2>
       <div className="row">
       {products.map((product, serial) => (
         <div className="col-md-3" key={serial}>
@@ -42,5 +42,4 @@ const GetProductDetails = () => {
       </div>
   )
 }
-
 export default GetProductDetails
