@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { IoIosCart } from 'react-icons/io';
+import { IoIosCart, IoLogoCodepen } from 'react-icons/io';
 import { FaUser } from "react-icons/fa";
 import { MdProductionQuantityLimits } from "react-icons/md";
 import { IoHomeSharp } from "react-icons/io5";
@@ -46,7 +46,7 @@ const Navbar = () => {
                             </Link>
                         </li>
                         <li className="nav-item mx-2">
-                            <Link className="nav-link fw-bold text-dark fs-6" to="/userdetails">
+                            <Link className="nav-link fw-bold text-dark fs-6" to="#">
                                 <span style={{ fontSize: '25px', marginLeft: '4px' }}><FaUser /></span><br />User
                             </Link>
                         </li>

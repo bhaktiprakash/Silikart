@@ -1,4 +1,5 @@
 import React from 'react';
+import ProductApiService from '../ApiService/ProductApiService';
 import { Link } from 'react-router-dom';
 
 const ProductCard = ({ product }) => {
@@ -13,7 +14,7 @@ const ProductCard = ({ product }) => {
                 <p className="card-text">Serial: {serial}</p>
                 <p className="card-text fw-bold fst-italic">Availability: {availabilityText}</p>
                 <div className="d-grid gap-2">
-                    <Link to="#" className="btn btn-dark">View Details</Link>
+                    <Link to={`/product/${serial}`} className="btn btn-dark">View Details</Link>
                     <Link to="#" className="btn btn-success">Add to Cart</Link>
                 </div>
             </div>

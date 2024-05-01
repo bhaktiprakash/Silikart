@@ -14,6 +14,17 @@ class ProdcutApiService {
         }
     }
 
+    async getProductData(serial){
+        try {
+            const res = await axios.get(`${this.api}/product/${serial}`)
+            console.log(res.data);
+        return {data:res.data[0],status:true}
+        } catch (error) {
+            return {status:false}
+        }
+        
+    }
+
 
 }
 
