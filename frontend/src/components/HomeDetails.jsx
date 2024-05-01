@@ -7,10 +7,10 @@ const HomeDetails = () => {
         
         <div className='row my-5 py-3'>
             <div className="col-md-8">
-                <img src={image1} alt="image" />
+                <img src={image1} alt="image" className="img-fluid"/>
             </div>
             <div className="col-md-4">
-                <h3 className='p-3 lh-base m-4 lead fw-bold fs-2 '>Welcome to <span className='text-primary'>Silikart</span>! Your one-stop solution for all your engineering essentials, absolutely FREE OF COST!!</h3>
+                <h3 className='p-3 lh-base lead fw-bold fs-2 '>Welcome to <span className='text-primary'>Silikart</span>! Your one-stop solution for all your engineering essentials, absolutely FREE OF COST!!</h3>
             </div>
         </div>        
         

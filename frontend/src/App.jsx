@@ -6,7 +6,7 @@ import './App.css'
 import Home from "./pages/Home"
 
 import GetProductDetails from './pages/GetProductDetails'
-
+import GetOneProduct from './pages/GetOneProduct'
 
 import Layout from "./layouts/Layout"
 
@@ -19,6 +19,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home/>},
       { path: "/product", element: <GetProductDetails/>},
+      { path: "/product/:serial", element: <GetOneProduct/>},
       
     ]
   }
