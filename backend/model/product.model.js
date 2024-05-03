@@ -20,7 +20,7 @@ const productSchema = new mongoose.Schema({
     },
     details: {
         duration: {
-            type: Number,
+            type: String,
         },
         description: {
             type: String,
@@ -28,7 +28,7 @@ const productSchema = new mongoose.Schema({
         howToUse: {
             type: String,
         },
-        whereToUse: {
+        whyToUse: {
             type: String
         }
     }
