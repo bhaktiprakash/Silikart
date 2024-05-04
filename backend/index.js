@@ -2,7 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const dbConnect = require('./db/db')
 const productRouter = require('./router/product.router')
-// const studentAcademicRouter = require('./router/product.router')
+const studentRouter = require('./router/student.router')
 
 const app = express()
 
@@ -11,7 +11,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 app.use("/product", productRouter)
-// app.use("/studentAcademic", studentAcademicRouter)
+app.use("/student", studentRouter)
 
 
 app.get("/", (req, res)=>{
