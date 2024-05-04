@@ -10,13 +10,14 @@ const studentSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    yearOfAdm: {
+    email: {
         type: String,
-        required: true,
-        unique: true
+        unique: true,
+        required: true
     },
-    branch: {
+    password: {
         type: String,
+        unique: true,
         required: true
     }
 })
