@@ -3,21 +3,13 @@ const express = require('express')
 const{
     addStudent,
     allStudentsInfo,
-    getStudentById,
-    updateStudent,
-    deleteStudent,
-    allDetails,
-    insertBoth
+    loginStudent
 } = require('../controller/student.controller')
 
-const studentInfoRouter = express.Router()
+const studentRouter = express.Router()
 
-studentInfoRouter.get("/details", allDetails)
-studentInfoRouter.get("/", allStudentsInfo)
-studentInfoRouter.post("/", addStudent)
-studentInfoRouter.get("/:roll", getStudentById)
-studentInfoRouter.put("/:roll", updateStudent)
-studentInfoRouter.delete("/:roll", deleteStudent)
-studentInfoRouter.post("/insertBoth", insertBoth)
+studentRouter.get("/", allStudentsInfo)
+studentRouter.post("/", addStudent)
+studentRouter.post("/signin", loginStudent)
 
-module.exports = studentInfoRouter
+module.exports = studentRouter

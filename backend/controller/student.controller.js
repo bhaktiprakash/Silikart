@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
-
+const bcrypt = require('bcrypt')
 const student = require('../model/student.model');
-const studentAcademic = require('../model/product.model');
 
 async function allStudentsInfo(req, res){
     try {
@@ -15,7 +14,16 @@ async function allStudentsInfo(req, res){
 
 async function addStudent(req,res){
     try {
-        let newStudent = await student.create(req.body)
+        let {name, sic, email, password}  = req.body
+        const existingStudent = await student.findOne({ SIC: sic });
+        if (existingStudent) {
+            return res.status(400).json({ message: "Student with this SIC already exists" });
+        }
+        const salt = await bcrypt.genSalt(10)
+        password = await bcrypt.hash(password, salt)
+        newStudent = await student.create({name, sic, email, password})
+
+        // let newStudent = await student.create(req.body)
         res.status(201).json(newStudent)
     } catch (error) {
         console.log(error);
@@ -23,19 +31,26 @@ async function addStudent(req,res){
     }
 }
 
-async function getStudentById(req, res){
+async function loginStudent(req, res) {
     try {
-        let { roll } = req.params
-        console.log(req.params);
-        let student = await student.find({rollno: roll})
-        if(student.length >0){
-            res.status(200).json(student)
+        const { email, password } = req.body
+
+        let user = await student.findOne({ email: email })
+        if (!user) {
+            return res.status(404).json({ message: 'Invalid Email' })
+        }
+        let isPasswordValid = await bcrypt.compare(password, user.password)
+        if (isPasswordValid) {
+            // const token = jwt.sign(
+            //     {user: {id: user._id, name: user.name, email: user.email}},
+            //     process.env.JWT_SECRET
+            // )
+            res.status(200).json({ message: 'Login Successfully'})
         } else {
-            res.status(404).json({"message": "Data not found"})
+            res.status(400).json({ message: 'Invalid Password' })
         }
     } catch (error) {
         console.log(error);
-        res.status(500).json({"message": error.message})
     }
 }
 
@@ -62,58 +77,10 @@ async function deleteStudent(req, res){
     }
 }
 
-async function allDetails(req, res){
-    try {
-        let data = await student.aggregate([
-            {
-                $lookup: {
-                    from: "studentacademics",
-                    localField: "rollno",
-                    foreignField: "rollno",
-                    as: "studentacademics"
-                }
-            }
-        ])
-        res.status(200).json(data)
-    } catch (error) {
-        console.log(error);
-        res.status(500).json({"message": error.message})
-    }
-}
-
-async function insertBoth(req,res){
-    try {
-        const {
-            name,rollno,mobile,email,address,program,branch,cgpa
-        } = req.body
-        let newStudent = await student.create({
-            name: name,
-            rollno: rollno,
-            mobile: mobile,
-            email: email,
-            address: address
-        })
-        let newStudentAcademic = await studentAcademic.create({
-            rollno: rollno,
-            program: program,
-            branch: branch,
-            cgpa: cgpa
-        })
-        res.status(201).json(newStudent)
-        res.status(201).json(newStudentAcademic)
-    } catch (error) {
-        console.log(error);
-        res.status(400).json({"message": error.message})
-    }
-}
-
-
 module.exports = {
     addStudent,
     allStudentsInfo,
-    getStudentById,
     updateStudent,
     deleteStudent,
-    allDetails,
-    insertBoth
+    loginStudent
 }
