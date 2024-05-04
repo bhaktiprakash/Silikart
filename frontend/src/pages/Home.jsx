@@ -9,7 +9,7 @@ const Home = () => {
         <div>
             {/* <Background/> */}
             <Carousal />
-            <h1 className='text-center fw-bold fs-1 mt-2'>Welcome to Silikart</h1>
+            {/* <h1 className='text-center fw-bold fs-1 mt-2'>Welcome to Silikart</h1> */}
             {/* <HomeDetails/> */}
             <HomeDetails/>
 

@@ -4,7 +4,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 
 const GetOneProduct = () => {
     const [product, setProduct] = useState(null);
-    const [quantity, setQuantity] = useState(20); // Default quantity set to 20
+    const [quantity, setQuantity] = useState(1); // Default quantity set to 20
     const navigate = useNavigate();
     const { serial } = useParams();
 
@@ -36,32 +36,32 @@ const GetOneProduct = () => {
     };
 
     return (
-        <div className='container bg-white'>
+        <div className='container bg-light p-5 mt-3 rounded-4'>
             <div className='row'>
                 <div className='col-md-6 pt-3'>
                     <img src={product.image} alt="Product" height="800px" className='img-fluid' />
                 </div>
-                <div className='col-md-6 pt-3 mt-5 ps-5 mx-auto '>
-                    <h3 className='text-center fw-bold fst-italic fs-1 mb-5'>{product.name}</h3>
-                    <div className='bg-light rounded-5 '>
-                        <ul className='fw-bold fst-italic fs-6'>
-                            <li className='m-1 py-1'>Availability: {product.availability ? 'Available' : 'Not Available'}</li>
-                            <li className='m-1 py-1 p-lead' >Description: {product.details.description}</li>
-                            <li className='m-1 py-1'>Duration: {product.details.duration}</li> 
-                            <li className='m-1 py-1 p-lead '>HowToUse: {product.details.howToUse}</li>
-                            <li className='m-1 py-1 p-lead'>WhyToUse: {product.details.whyToUse}</li>
-                            <li className='m-1 py-1'>Default value is 20</li>
+                <div className='col-md-6 mt-3 mx-auto '>
+                    <h3 className='text-center fs-1 mb-5'>{product.name}</h3>
+                    <div className='rounded-5 '>
+                        <ul className='fs-6'>
+                            <li className='m-1 py-1 p-lead'><span className='text-dark fw-semibold'>Availability</span>: {product.availability ? 'Available' : 'Not Available'}</li>
+                            <li className='m-1 py-1 p-lead' ><span className='fw-semibold'>Description</span>: {product.details.description}</li>
+                            <li className='m-1 py-1'><span className='fw-semibold'>Duration</span>: {product.details.duration}</li> 
+                            <li className='m-1 py-1 p-lead '><span className='fw-semibold'>How To Use</span>: {product.details.howToUse}</li>
+                            <li className='m-1 py-1 p-lead'><span className='fw-semibold'>Why To Use</span>: {product.details.whyToUse}</li>
+                            <li className='m-1 py-1'><span className='fw-semibold'>Product quantity in stock</span>: 20</li>
                         </ul>
                     </div>
 
                    
-                    <div className="input-group mt-2 mb-3 mt-4">
-                        <button className="btn btn-info pb-2 addcartbut" type="button" onClick={decrement}>-</button>
+                    <div className="input-group m-3">
+                        <button className="btn btn-info pb-2" type="button" onClick={decrement}>-</button>
                         <input type="text" className="form-control text-center fw-bold" value={quantity} readOnly />
                         <button className="btn btn-info pb-2 addcartbut
                         " type="button" onClick={increment}>+</button>
                     </div>
-                    <button className="btn btn-dark w-100">Add to Cart</button>
+                    <button className="btn btn-info mx-3 w-100">Add to Cart</button>
                 </div>
             </div>
         </div>

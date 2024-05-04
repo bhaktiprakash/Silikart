@@ -46,8 +46,13 @@ const Navbar = () => {
                             </Link>
                         </li>
                         <li className="nav-item mx-2">
-                            <Link className="nav-link fw-bold text-dark fs-6" to="#">
-                                <span style={{ fontSize: '25px', marginLeft: '4px' }}><FaUser /></span><br />User
+                            <Link className="nav-link fw-bold text-dark fs-6" to="/signup">
+                                <span style={{ fontSize: '25px', marginLeft: '4px' }}><FaUser /></span><br />Sign Up
+                            </Link>
+                        </li>
+                        <li className="nav-item mx-2">
+                            <Link className="nav-link fw-bold text-dark fs-6" to="/signin">
+                                <span style={{ fontSize: '25px', marginLeft: '4px' }}><FaUser /></span><br />Login
                             </Link>
                         </li>
                     </ul>
