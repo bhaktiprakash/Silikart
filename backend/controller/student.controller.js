@@ -15,13 +15,13 @@ async function allStudentsInfo(req, res){
 async function addStudent(req,res){
     try {
         let {name, sic, email, password}  = req.body
-        const existingStudent = await student.findOne({ SIC: sic });
+        const existingStudent = await student.findOne({ sic: sic });
         if (existingStudent) {
             return res.status(400).json({ message: "Student with this SIC already exists" });
         }
         const salt = await bcrypt.genSalt(10)
         password = await bcrypt.hash(password, salt)
-        newStudent = await student.create({name, sic, email, password})
+        let newStudent = await student.create({name, sic, email, password})
 
         // let newStudent = await student.create(req.body)
         res.status(201).json(newStudent)

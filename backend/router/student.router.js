@@ -9,7 +9,7 @@ const{
 const studentRouter = express.Router()
 
 studentRouter.get("/", allStudentsInfo)
-studentRouter.post("/", addStudent)
+studentRouter.post("/signup", addStudent)
 studentRouter.post("/signin", loginStudent)
 
 module.exports = studentRouter
