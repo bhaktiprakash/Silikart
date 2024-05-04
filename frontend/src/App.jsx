@@ -9,6 +9,8 @@ import GetProductDetails from './pages/GetProductDetails'
 import GetOneProduct from './pages/GetOneProduct'
 
 import Layout from "./layouts/Layout"
+import SignUp from './pages/SignUp'
+import SignIn from './pages/SignIn'
 
 function App() {
 
@@ -20,6 +22,8 @@ const router = createBrowserRouter([
       { path: "/", element: <Home/>},
       { path: "/product", element: <GetProductDetails/>},
       { path: "/product/:serial", element: <GetOneProduct/>},
+      { path: "/signup", element: <SignUp/>},
+      { path: "/signin", element: <SignIn/>},
       
     ]
   }
