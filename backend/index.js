@@ -5,6 +5,7 @@ const productRouter = require('./router/product.router')
 const studentRouter = require('./router/student.router')
 
 const app = express()
+require('dotenv').config()
 
 app.use(cors())
 app.use(express.json())

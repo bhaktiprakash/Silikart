@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt')
 const student = require('../model/student.model');
+const jwt  = require('jsonwebtoken')
 
 async function allStudentsInfo(req, res){
     try {
@@ -41,11 +42,11 @@ async function loginStudent(req, res) {
         }
         let isPasswordValid = await bcrypt.compare(password, user.password)
         if (isPasswordValid) {
-            // const token = jwt.sign(
-            //     {user: {id: user._id, name: user.name, email: user.email}},
-            //     process.env.JWT_SECRET
-            // )
-            res.status(200).json({ message: 'Login Successfully'})
+            const token = jwt.sign(
+                {user: {id: user._id, name: user.name, email: user.email}},
+                process.env.JWT_SECRET
+            )
+            res.status(200).json({ message: 'Login Successfully', token})
         } else {
             res.status(400).json({ message: 'Invalid Password' })
         }
