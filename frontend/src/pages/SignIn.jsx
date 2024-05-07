@@ -1,5 +1,5 @@
 import { useState } from 'react'
-// import userApiService from '../ApiService/UserApiService'
+import studentApiService from '../ApiService/StudentApiService'
 // import { useAuth } from '../contexts/AuthContext'
 import { useNavigate } from 'react-router-dom'
 
@@ -16,21 +16,21 @@ const SignIn = () => {
 
     const handleSubmit = async(e) =>{
         e.preventDefault()
-        // const user = {
-        //     email, password
-        // }
-        // console.log(user);
+        const student = {
+            email, password
+        }
+        console.log(student);
 
-        // const res = await userApiService.loginUser(user);
-        // console.log(res);
-        // if(res.status){
-        //     setMessage("Login Successfull")
-        //     login(res.data.token)
-        //     navigate("/")
-        // } else {
-        //     setMessage(res.message)
-        // }
-        // setError(!res.status)
+        const res = await studentApiService.loginStudent(student);
+        console.log(res);
+        if(res.status){
+            setMessage("Login Successfull")
+            // login(res.data.token)
+            navigate("/")
+        } else {
+            setMessage(res.message)
+        }
+        setError(!res.status)
     }
     // console.log("Component Rerendered");
 

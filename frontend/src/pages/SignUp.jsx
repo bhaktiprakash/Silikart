@@ -1,9 +1,10 @@
 import { useState } from 'react'
-// import userApiService from '../ApiService/UserApiService'
+import studentApiService from '../ApiService/StudentApiService'
 
 const SignUp = () => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
+    const [sic, setSIC] = useState('')
     const [password, setPassword] = useState('')
 
     const [message, setMessage] = useState('')
@@ -11,20 +12,21 @@ const SignUp = () => {
 
     const handleSubmit = async(e) =>{
         e.preventDefault()
-        // const newUSer = {
-        //     name, email, password
-        // }
-        // console.log(newUSer);
+        const newStudent = {
+            name, email, sic, password
+        }
+        console.log(newStudent);
 
-        // const res = await userApiService.addUSer(newUSer);
-        // console.log(res);
-        // if(res.status){
-        //     setMessage("Registration Successfull")
+        const res = await studentApiService.addStudent(newStudent);
+        console.log(res);
+        if(res.status){
+            setMessage("Registration Successfull")
             
-        // } else {
-        //     setMessage(res.message)
-        // }
-        // setError(!res.status)
+        } else {
+            console.log(res.message);
+            setMessage(res.message)
+        }
+        setError(!res.status)
     }
     // console.log("Component Rerendered");
 
@@ -56,6 +58,16 @@ const SignUp = () => {
                                     className="form-control"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
+                                    required
+                                />
+                            </div>
+                            <div className="mb-1">
+                                <label htmlFor="">SIC</label>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    value={sic}
+                                    onChange={(e) => setSIC(e.target.value)}
                                     required
                                 />
                             </div>
