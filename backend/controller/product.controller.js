@@ -14,7 +14,7 @@ async function addProduct(req,res){
 
 async function allProducts(req, res){
     try {
-        let products = await product.find()
+        let products = await product.find();
         res.status(200).json(products)
     } catch (error) {
         console.log(error);

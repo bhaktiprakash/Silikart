@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const orderSchema = new mongoose.Schema({
-    user_id: { 
+    userId: { 
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Student' 
     },
@@ -9,7 +9,7 @@ const orderSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Product'
     }],
-    total_price: {
+    totalPrice: {
         type: Number,
     },
     status: { 
@@ -19,3 +19,6 @@ const orderSchema = new mongoose.Schema({
 });
 
 const Order = mongoose.model('Order', orderSchema);
+
+
+module.exports = Order

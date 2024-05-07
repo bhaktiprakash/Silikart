@@ -1,10 +1,11 @@
+const mongoose = require('mongoose');
 const order = require('../model/order.model')
+
 async function placeOrder(req, res) {
     try {
-        // const { user_id, products, total_price } = req.body;
-        // const order = new Order({ user_id, products, total_price });
-        let newOder = await order.create(req.body)        
-        res.status(201).json(order);
+        console.log(req.body);
+        let newOrder = await order.create(req.body)
+        res.status(201).json();
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
@@ -13,7 +14,7 @@ async function placeOrder(req, res) {
     
 async function getOrders(req, res) {
     try {
-      const orders = await order.find({ user_id: req.params.userId });
+      const orders = await order.find({ userId: req.params.userId });
       res.json(orders);
     } catch (error) {
       res.status(500).json({ message: error.message });
