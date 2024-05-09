@@ -7,7 +7,7 @@ const ProductCard = ({ product }) => {
     const availabilityText = availability ? 'Available' : 'Not Available';
 
     return (
-        <div className="card my-3 product-card" style={{ width: '100%', maxWidth: '18rem' }}>
+        <div className="card my-3 mx-auto product-card rounded-1" style={{ width: '100%', maxWidth: '18rem' }}>
       <img src={image} className="img-fluid" alt="Product" style={{ height: '300px', objectFit: 'cover' }} />
       <div className="card-body">
         <h5 className="card-title fs-4 fw-semibold">{name}</h5>

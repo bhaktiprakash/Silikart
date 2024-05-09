@@ -3,9 +3,9 @@ import React from 'react'
 const Footer = () => {
   return (
     <>
-      <div className='bg-dark text-light p-3'>
-      <div className="row">
-        <div className="col-md-4 text-center"><p className="text-primary">Company</p>
+      <div className='bg-black text-light p-3'>
+      <div class="row">
+        <div class="col-md-4 text-center"><p class="text-primary">Company</p>
           <p>About Us <br/> Blog <br/> Career <br/> Contact Us</p>
         </div>
         <div className="col-md-4 text-center"><p className="text-primary">Policies</p>
