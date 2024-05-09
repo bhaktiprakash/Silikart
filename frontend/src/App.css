@@ -71,8 +71,101 @@
 .product-card .card-img-top {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  height: 300px; 
+  height: 300px;
+ 
 
 }
+/* signup page */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url('../images/signup.jpg');
+  background-size: cover;
+  background-position: center;
+  overflow-x: hidden; /* Optional: Prevent horizontal scrollbar */
+  color: black  ;
+}
+
+.signup-container {
+  height: 100%;
+  overflow: auto;
+}
+/* signup opacity */
+.home_detailsbg{
+  background-color: rgba(255, 209, 23, 0.865);
+}
+/* homedetails_css */
+
+.card-block {
+    font-size: 1em;
+    position: relative;
+    margin: 0;
+    padding: 1em;
+    border: none;
+    border-top: 1px solid rgba(34, 36, 38, .1);
+    box-shadow: none;
+     
+}
+.card {
+    /* applied on products page */
+    overflow: hidden;
+    box-shadow: 4px 2px 2px 4px rgba(255, 209, 23, 0.865);
+    
+}
+/* opacity_sign_in */
+.opacity-form{
+  opacity: 0.9;
+  zoom:1,
+
+}
+
+/* signup page */
+.form-label {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Add Borders and Shadows */
+.form-control {
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Customized Input Fields */
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Button Styles */
+
+
+
+
+/* Spacing and Alignment */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Background Image */
+.form-container {
+  background-image: url('background-image.jpg');
+  background-size: cover;
+  padding: 20px;
+}
+
+/* Use Icons */
+.input-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+
+
 
 

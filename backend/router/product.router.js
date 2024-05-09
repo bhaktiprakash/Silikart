@@ -7,7 +7,7 @@ const {
     updateProduct,
     deleteProduct
 } = require('../controller/product.controller')
-const authenticate = require('../middleware/auth.middleware')
+// const authenticate = require('../middleware/auth.middleware')
 
 const productRouter = express.Router()
 

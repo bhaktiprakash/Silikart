@@ -4,6 +4,10 @@ import { FaUser } from "react-icons/fa";
 import { MdProductionQuantityLimits } from "react-icons/md";
 import { IoHomeSharp } from "react-icons/io5";
 import { useAuth } from '../contexts/AuthContext';
+import { FaRegUser } from "react-icons/fa6";
+// import image1 from "../images/Silikart1.jpg";
+import SearchBar from '../components/SearchBar';
+
 const Navbar = () => {
 
     const authContext = useAuth()
@@ -16,11 +20,11 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="navbar navbar-expand-lg bg-white shadow" style={{ padding: '0.2rem 0.1rem' }}>
+        <nav className="navbar navbar-expand-lg home_detailsbg shadow-sm" style={{ padding: '0.2rem 0.2rem' }}>
             <div className="container-fluid">
                 <Link className="navbar-brand" to="/">
                     <h3 className='fw-bold fs-4'>
-                        <span style={{ fontSize: '28px', marginRight: '8px' }}><IoIosCart /></span> SILIKART
+                        <span style={{ fontSize: '28px', marginRight: '8px' }}></span>SILIKART
                     </h3>
                 </Link>
                 <button
@@ -35,25 +39,34 @@ const Navbar = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse ms-s" id="navbarNav">
-                    <nav className="navbar navbar-light ">
-                        <div className="container-fluid d-flex ms-5">
-                            <form className="d-flex ">
-                                <input className="form-control me-3" type="search" placeholder="Search Your Products Here" size="40" aria-label="Search" />
-                                <button className="btn btn-dark shadow-md searchbut" type="submit">Search</button>
-                            </form>
-                        </div>
-                    </nav>
+                <nav className="navbar navbar-light">
+            <div className="container-fluid d-flex ms-5">
+                {/* Your search form */}
+                <form className="d-flex">
+                    <input
+                        className="form-control me-3"
+                        type="search"
+                        placeholder="Search Your Products Here"
+                        size="40"
+                        aria-label="Search"
+                    />
+                    <button className="btn btn-dark shadow-md searchbut" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
 
-                    <ul className="navbar-nav ms-auto">
+                    <ul className="navbar-nav ms-auto d-flex flex-row">
                         <li className="nav-item mx-2 ">
-                            <Link className="nav-link fw-bold text-dark fs-6" to="/">
-                                <span style={{ fontSize: '25px', marginLeft: '12px' }}><IoHomeSharp /></span><br />Home
+                            <Link className="nav-link fw-bold text-dark fs-6 d-flex flex-column align-items-center" to="/">
+                                <span style={{ fontSize: '25px' }}><IoHomeSharp /></span>
+                                <span>Home</span>
                             </Link>
                         </li>
                         <li className="nav-item mx-2">
-                            <Link className="nav-link fw-bold text-dark fs-6" to="/product">
-                                <span style={{ fontSize: '25px', marginLeft: '21px' }}><MdProductionQuantityLimits /></span><br />Products
-                            </Link>
+                        <Link className="nav-link fw-bold text-dark fs-6 d-flex flex-column align-items-center" to="/product">
+                            <span style={{ fontSize: '25px' }}><MdProductionQuantityLimits /></span>
+                            <span>Products</span>
+                        </Link>
                         </li>
                         {isLoggedIn ? (
                             <>
@@ -81,8 +94,9 @@ const Navbar = () => {
                             </Link>
                         </li>
                         <li className="nav-item mx-2">
-                            <Link className="nav-link fw-bold text-dark fs-6" to="/signin">
-                                <span style={{ fontSize: '25px', marginLeft: '4px' }}><FaUser /></span><br />Login
+                            <Link className="nav-link fw-bold text-dark fs-6 d-flex flex-column align-items-center" to="/signin">
+                                <span style={{ fontSize: '25px' }}><FaUser /></span>
+                                <span>Login</span>
                             </Link>
                         </li>
                             </>
@@ -94,5 +108,4 @@ const Navbar = () => {
         </nav>
     );
 };
-
 export default Navbar;
