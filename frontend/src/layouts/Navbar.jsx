@@ -3,11 +3,22 @@ import { IoIosCart, IoLogoCodepen } from 'react-icons/io';
 import { FaUser } from "react-icons/fa";
 import { MdProductionQuantityLimits } from "react-icons/md";
 import { IoHomeSharp } from "react-icons/io5";
+import { useAuth } from '../contexts/AuthContext';
 import { FaRegUser } from "react-icons/fa6";
 // import image1 from "../images/Silikart1.jpg";
 import SearchBar from '../components/SearchBar';
 
 const Navbar = () => {
+
+    const authContext = useAuth()
+    console.log(authContext);
+    const { isLoggedIn, user, logout} = authContext
+    // console.log(user.name);
+
+    const logoutUser = () => {
+        logout()
+    }
+
     return (
         <nav className="navbar navbar-expand-lg home_detailsbg shadow-sm" style={{ padding: '0.2rem 0.2rem' }}>
             <div className="container-fluid">
@@ -57,10 +68,29 @@ const Navbar = () => {
                             <span>Products</span>
                         </Link>
                         </li>
+                        {isLoggedIn ? (
+                            <>
+                            <li className="nav-item mx-2">
+                            <Link className="nav-link fw-bold text-dark fs-6" to="#">
+                                <span style={{ fontSize: '25px', marginLeft: '4px' }}><FaUser /></span><br />Welcome {user.name}
+                            </Link>
+                        </li>
                         <li className="nav-item mx-2">
-                            <Link className="nav-link fw-bold text-dark fs-6 d-flex flex-column align-items-center" to="/signup">
-                                <span style={{ fontSize: '25px' }}><FaRegUser /></span>
-                                <span>Register</span>
+                            <Link className="nav-link fw-bold text-dark fs-6" to="/checkout">
+                                <span style={{ fontSize: '25px', marginLeft: '4px' }}><FaUser /></span><br />Cart
+                            </Link>
+                        </li>
+                        <li className="nav-item mx-2">
+                            <Link className="nav-link fw-bold text-dark fs-6" to="/" onClick={logoutUser}>
+                                <span style={{ fontSize: '25px', marginLeft: '4px' }}><FaUser /></span><br />Logout
+                            </Link>
+                        </li>
+                            </>
+                        ) : (
+                            <>
+                            <li className="nav-item mx-2">
+                            <Link className="nav-link fw-bold text-dark fs-6" to="/signup">
+                                <span style={{ fontSize: '25px', marginLeft: '4px' }}><FaUser /></span><br />Sign Up
                             </Link>
                         </li>
                         <li className="nav-item mx-2">
@@ -69,6 +99,9 @@ const Navbar = () => {
                                 <span>Login</span>
                             </Link>
                         </li>
+                            </>
+                        )}
+                        
                     </ul>
                 </div>
             </div>

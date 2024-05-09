@@ -46,12 +46,14 @@ async function loginStudent(req, res) {
                 {user: {id: user._id, name: user.name, email: user.email}},
                 process.env.JWT_SECRET
             )
+            // console.log(token);
             res.status(200).json({ message: 'Login Successfully', token})
         } else {
             res.status(400).json({ message: 'Invalid Password' })
         }
     } catch (error) {
         console.log(error);
+        res.status(500).json({ error: error })
     }
 }
 

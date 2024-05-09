@@ -10,6 +10,7 @@ const {
 // const authenticate = require('../middleware/auth.middleware')
 
 const productRouter = express.Router()
+
 productRouter.get("/", allProducts)
 productRouter.get("/:serial", getProductById)
 productRouter.post("/",  addProduct)

@@ -1,20 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import ProductApiService from '../ApiService/ProductApiService';
 import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useCart } from '../contexts/CartContext';
 import { TbTruckDelivery } from "react-icons/tb";
 import { TbReplace } from "react-icons/tb";
 import { GiCardPickup } from "react-icons/gi";
 import { GiDuration } from "react-icons/gi";
-
-
-
-
 
 const GetOneProduct = () => {
     const [product, setProduct] = useState(null);
     const [quantity, setQuantity] = useState(1); // Default quantity set to 20
     const navigate = useNavigate();
     const { serial } = useParams();
+    const {addToCart} = useCart();
+    const handleAddToCart = (product) => {
+      addToCart(product);
+      console.log("Product added to cart");
+    }
 
     async function getData(serial) {
         const res = await ProductApiService.getProductData(serial);
