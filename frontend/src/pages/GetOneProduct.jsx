@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import ProductApiService from '../ApiService/ProductApiService';
 import { useParams, Link, useNavigate } from 'react-router-dom';
+import { TbTruckDelivery } from "react-icons/tb";
+import { TbReplace } from "react-icons/tb";
+import { GiCardPickup } from "react-icons/gi";
+import { GiDuration } from "react-icons/gi";
+
+
+
+
 
 const GetOneProduct = () => {
     const [product, setProduct] = useState(null);
@@ -43,6 +51,7 @@ const GetOneProduct = () => {
                 </div>
                 <div className='col-md-6 mt-3 mx-auto '>
                     <h3 className='text-center fs-1 mb-5'>{product.name}</h3>
+                    <h1 className='fw-bold fs-4 ps-4'>Product Details</h1>
                     <div className='rounded-5 '>
                         <ul className='fs-6'>
                             <li className='m-1 py-1 p-lead'><span className='text-dark fw-semibold'>Availability</span>: {product.availability ? 'Available' : 'Not Available'}</li>
@@ -53,15 +62,46 @@ const GetOneProduct = () => {
                             <li className='m-1 py-1'><span className='fw-semibold'>Product quantity in stock</span>: 20</li>
                         </ul>
                     </div>
-
-                   
+                    <div>
+                        <h1 className='fw-bold fs-4 ps-4'>Benefits</h1>
+                    </div>
+                    <div className="row justify-content-between justify-content-md-between mx-auto md-2 ms-md-5 md-5 mt-4">
+                        <div className="col-6 col-md-3 text-center mb-4">
+                            <div>
+                                <h1 className='fs-1 '><TbTruckDelivery /></h1>
+                                <p>Free Delivery</p>
+                            </div>
+                        </div>
+                        <div className='col-6 col-md-3 text-center mb-4'>
+                            <div>
+                                <h1 className='fs-1'><TbReplace /></h1>
+                                <p>Easy Replace</p>
+                            </div>
+                        </div>
+                        <div className="col-6 col-md-3 text-center mb-4">
+                            <div>
+                                <h1 className='fs-1'><GiDuration /></h1>
+                                <p>Fixed Duration</p>
+                            </div>
+                        </div>
+                        <div className='col-6 col-md-3 text-center mb-4'>
+                            <div>
+                                <h1 className='fs-1'><GiCardPickup /></h1>
+                                <p>Easy Pickup</p>
+                            </div>
+                        </div>
+                    </div>
+ 
+                    
                     <div className="input-group m-3">
                         <button className="btn btn-info pb-2" type="button" onClick={decrement}>-</button>
                         <input type="text" className="form-control text-center fw-bold" value={quantity} readOnly />
                         <button className="btn btn-info pb-2 addcartbut
                         " type="button" onClick={increment}>+</button>
                     </div>
+                   
                     <button className="btn btn-info mx-3 w-100">Add to Cart</button>
+                    
                 </div>
             </div>
         </div>

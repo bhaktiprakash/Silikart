@@ -3,8 +3,8 @@ import image from "../images/userimage.jpg";
 
 const AboutUs = () => {
     return (
-        <div className="container my-2 py-5 mx-auto bg-light">
-            <h1 className="text-center my-5">Meet our Team</h1>
+        <div className="py-1 mx-auto bg-light">
+            <h1 className="text-center my-5 fw-bold">Meet our Team</h1>
             <div className="row py-3">
                 <div className="col-md-3 d-flex flex-column align-items-center ">
                     <div className="circle">
