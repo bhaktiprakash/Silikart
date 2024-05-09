@@ -1,10 +1,16 @@
 import React from 'react';
-import ProductApiService from '../ApiService/ProductApiService';
 import { Link } from 'react-router-dom';
+import { useCart } from '../contexts/CartContext';
 
 const ProductCard = ({ product }) => {
     const { serial, name, availability, image, details } = product;
     const availabilityText = availability ? 'Available' : 'Not Available';
+
+    const {addToCart} = useCart();
+    const handleAddToCart = (product) => {
+      addToCart(product);
+      console.log("Product added to cart");
+    }
 
     return (
         <div className="card my-3 product-card" style={{ width: '100%', maxWidth: '18rem' }}>
@@ -16,7 +22,7 @@ const ProductCard = ({ product }) => {
         <p className="card-text"><span className='fw-semibold'>Duration</span>: {details.duration}</p>
         <div className="d-grid gap-2">
           <Link to={`/product/${serial}`} className="btn btn-dark">View Details</Link>
-          <Link to="#" className="btn btn-success">Add to Cart</Link>
+          <button onClick={() => handleAddToCart(product)} className="btn btn-success">Add to Cart</button>
         </div>
       </div>
     </div>

@@ -1,12 +1,15 @@
 import { useState } from 'react'
 import studentApiService from '../ApiService/StudentApiService'
-// import { useAuth } from '../contexts/AuthContext'
+import { useAuth } from '../contexts/AuthContext'
 import { useNavigate } from 'react-router-dom'
 
 const SignIn = () => {
     const navigate = useNavigate()
-    // const authContext = useAuth()
-    // const { login } = authContext
+    const authContext = useAuth()
+    if(!authContext){
+        return <div>Loading...</div>
+    }
+    const { login } = authContext
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -25,7 +28,7 @@ const SignIn = () => {
         console.log(res);
         if(res.status){
             setMessage("Login Successfull")
-            // login(res.data.token)
+            login(res.data.token)
             navigate("/")
         } else {
             setMessage(res.message)

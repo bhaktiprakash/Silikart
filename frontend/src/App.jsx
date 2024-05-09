@@ -11,6 +11,7 @@ import GetOneProduct from './pages/GetOneProduct'
 import Layout from "./layouts/Layout"
 import SignUp from './pages/SignUp'
 import SignIn from './pages/SignIn'
+import Checkout from './pages/Checkout'
 
 function App() {
 
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
       { path: "/product/:serial", element: <GetOneProduct/>},
       { path: "/signup", element: <SignUp/>},
       { path: "/signin", element: <SignIn/>},
+      {path: "/checkout", element: <Checkout/>}
       
     ]
   }

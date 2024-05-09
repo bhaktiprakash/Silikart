@@ -3,8 +3,18 @@ import { IoIosCart, IoLogoCodepen } from 'react-icons/io';
 import { FaUser } from "react-icons/fa";
 import { MdProductionQuantityLimits } from "react-icons/md";
 import { IoHomeSharp } from "react-icons/io5";
-
+import { useAuth } from '../contexts/AuthContext';
 const Navbar = () => {
+
+    const authContext = useAuth()
+    console.log(authContext);
+    const { isLoggedIn, user, logout} = authContext
+    // console.log(user.name);
+
+    const logoutUser = () => {
+        logout()
+    }
+
     return (
         <nav className="navbar navbar-expand-lg bg-white shadow" style={{ padding: '0.2rem 0.1rem' }}>
             <div className="container-fluid">
@@ -45,7 +55,27 @@ const Navbar = () => {
                                 <span style={{ fontSize: '25px', marginLeft: '21px' }}><MdProductionQuantityLimits /></span><br />Products
                             </Link>
                         </li>
+                        {isLoggedIn ? (
+                            <>
+                            <li className="nav-item mx-2">
+                            <Link className="nav-link fw-bold text-dark fs-6" to="#">
+                                <span style={{ fontSize: '25px', marginLeft: '4px' }}><FaUser /></span><br />Welcome {user.name}
+                            </Link>
+                        </li>
                         <li className="nav-item mx-2">
+                            <Link className="nav-link fw-bold text-dark fs-6" to="/checkout">
+                                <span style={{ fontSize: '25px', marginLeft: '4px' }}><FaUser /></span><br />Cart
+                            </Link>
+                        </li>
+                        <li className="nav-item mx-2">
+                            <Link className="nav-link fw-bold text-dark fs-6" to="/" onClick={logoutUser}>
+                                <span style={{ fontSize: '25px', marginLeft: '4px' }}><FaUser /></span><br />Logout
+                            </Link>
+                        </li>
+                            </>
+                        ) : (
+                            <>
+                            <li className="nav-item mx-2">
                             <Link className="nav-link fw-bold text-dark fs-6" to="/signup">
                                 <span style={{ fontSize: '25px', marginLeft: '4px' }}><FaUser /></span><br />Sign Up
                             </Link>
@@ -55,6 +85,9 @@ const Navbar = () => {
                                 <span style={{ fontSize: '25px', marginLeft: '4px' }}><FaUser /></span><br />Login
                             </Link>
                         </li>
+                            </>
+                        )}
+                        
                     </ul>
                 </div>
             </div>
