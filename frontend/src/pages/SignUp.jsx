@@ -1,12 +1,14 @@
 import { useState } from 'react'
+
 // import userApiService from '../ApiService/UserApiService'
 import image from "../images/signup3.jpg";
 import image1 from "../images/carousal6.jpg";
-
+import studentApiService from '../ApiService/StudentApiService'
 
 const SignUp = () => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
+    const [sic, setSIC] = useState('')
     const [password, setPassword] = useState('')
 
     const [message, setMessage] = useState('')
@@ -14,25 +16,27 @@ const SignUp = () => {
 
     const handleSubmit = async(e) =>{
         e.preventDefault()
-        // const newUSer = {
-        //     name, email, password
-        // }
-        // console.log(newUSer);
+        const newStudent = {
+            name, email, sic, password
+        }
+        console.log(newStudent);
 
-        // const res = await userApiService.addUSer(newUSer);
-        // console.log(res);
-        // if(res.status){
-        //     setMessage("Registration Successfull")
+        const res = await studentApiService.addStudent(newStudent);
+        console.log(res);
+        if(res.status){
+            setMessage("Registration Successfull")
             
-        // } else {
-        //     setMessage(res.message)
-        // }
-        // setError(!res.status)
+        } else {
+            console.log(res.message);
+            setMessage(res.message)
+        }
+        setError(!res.status)
     }
     // console.log("Component Rerendered");
 
 
     return (
+
         <div className="signup-container" style={{ backgroundImage: `url(${image1})`, backgroundSize: 'cover' }}>
             <div className="container py-5">
                 <div className="row justify-content-center">
@@ -89,6 +93,7 @@ const SignUp = () => {
                                         <button type="submit" className="btn bg-dark text-white rounded-5 w-100 fw-bold">Register</button>
                                     </div>
                                 </form>
+
                             </div>
                         </div>
                     </div>

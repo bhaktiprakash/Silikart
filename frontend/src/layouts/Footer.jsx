@@ -8,27 +8,27 @@ const Footer = () => {
         <div class="col-md-4 text-center"><p class="text-primary">Company</p>
           <p>About Us <br/> Blog <br/> Career <br/> Contact Us</p>
         </div>
-        <div class="col-md-4 text-center"><p class="text-primary">Policies</p>
+        <div className="col-md-4 text-center"><p className="text-primary">Policies</p>
           <p>Privacy Policies <br/>Terms of Use <br/>Secure Posting <br/>Copyright Policies</p>
         </div>
-        <div class="col-md-4 text-center"><p class="text-primary">Help</p>
+        <div className="col-md-4 text-center"><p className="text-primary">Help</p>
         <p>Content <br/>Management <br/>Security <br/> FAQ</p>
         </div>
       </div>
-      <ul class="list-unstyled list-inline text-center m-2">
-      <li class="list-inline-item">
+      <ul className="list-unstyled list-inline text-center m-2">
+      <li className="list-inline-item">
         <img src="https://d2g9wbak88g7ch.cloudfront.net/staticimages/facebook.png" alt="Facebook" width="32px" height="32px"/>
       </li>
-      <li class="list-inline-item">
+      <li className="list-inline-item">
         <img src="https://d2g9wbak88g7ch.cloudfront.net/staticimages/linkedin.png" alt="Linkedin" width="32px" height="32px"/>
       </li>
-      <li class="list-inline-item">
+      <li className="list-inline-item">
         <img src="https://d2g9wbak88g7ch.cloudfront.net/staticimages/youtube.png" alt="Youtube" width="32px" height="32px"/>
       </li>
-      <li class="list-inline-item">
+      <li className="list-inline-item">
         <img src="https://d2g9wbak88g7ch.cloudfront.net/staticimages/pinterest.png" alt="Pinterest" width="32px" height="32px"/>
       </li>
-      <li class="list-inline-item">
+      <li className="list-inline-item">
         <img src="https://d2g9wbak88g7ch.cloudfront.net/staticimages/instagram.png" alt="Instagram" width="32px" height="32px"/>
       </li>
     </ul>
