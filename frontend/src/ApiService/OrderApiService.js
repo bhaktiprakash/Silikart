@@ -1,4 +1,5 @@
 import axios from "axios";
+import { getToken } from "../utils/helperFunctions";
 
 class OrderApiService{
     constructor(){
@@ -7,7 +8,11 @@ class OrderApiService{
 
     async addOrder(cart){
         try {
-            const res = await axios.post(`${this.api}/order`, cart)
+            const res = await axios.post(`${this.api}/order`, cart, {
+                headers: {
+                    'Authorization': `Bearer ${getToken()}`
+                }
+            })
             console.log(res.data);
             return {data: res.data, status: true}
         } catch (error) {
