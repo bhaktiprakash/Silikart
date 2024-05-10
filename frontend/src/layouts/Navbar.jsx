@@ -6,14 +6,13 @@ import { IoHomeSharp } from "react-icons/io5";
 import { useAuth } from '../contexts/AuthContext';
 import { FaRegUser } from "react-icons/fa6";
 // import image1 from "../images/Silikart1.jpg";
-import SearchBar from '../components/SearchBar';
+// import SearchBar from '../components/SearchBar';
 
 const Navbar = () => {
 
     const authContext = useAuth()
     console.log(authContext);
     const { isLoggedIn, user, logout} = authContext
-    // console.log(user.name);
 
     const logoutUser = () => {
         logout()
@@ -48,8 +47,7 @@ const Navbar = () => {
                         type="search"
                         placeholder="Search Your Products Here"
                         size="40"
-                        aria-label="Search"
-                    />
+                        aria-label="Search" />
                     <button className="btn btn-dark shadow-md searchbut" type="submit">Search</button>
                 </form>
             </div>
@@ -71,7 +69,7 @@ const Navbar = () => {
                         {isLoggedIn ? (
                             <>
                             <li className="nav-item mx-2">
-                            <Link className="nav-link fw-bold text-dark fs-6" to="#">
+                            <Link className="nav-link fw-bold text-dark fs-6" to="/profile">
                                 <span style={{ fontSize: '25px', marginLeft: '4px' }}><FaUser /></span><br />Welcome {user.name}
                             </Link>
                         </li>

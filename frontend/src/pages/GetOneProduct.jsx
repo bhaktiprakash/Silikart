@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ProductApiService from '../ApiService/ProductApiService';
 import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 import { useCart } from '../contexts/CartContext';
 import { TbTruckDelivery } from "react-icons/tb";
 import { TbReplace } from "react-icons/tb";
@@ -13,9 +14,18 @@ const GetOneProduct = () => {
     const navigate = useNavigate();
     const { serial } = useParams();
     const {addToCart} = useCart();
+    const authContext = useAuth();
+    const { user } = authContext;
+
     const handleAddToCart = (product) => {
-      addToCart(product);
-      console.log("Product added to cart");
+        if(user){
+            addToCart(product);
+            console.log("Product added to cart");
+            alert("Product added to cart");
+        }
+        else{
+            alert("Login to buy")
+        }
     }
 
     async function getData(serial) {
@@ -45,6 +55,7 @@ const GetOneProduct = () => {
         }
     };
 
+    
     return (
         <div className='container bg-light p-5 mt-3 rounded-4'>
             <div className='row'>
@@ -102,7 +113,7 @@ const GetOneProduct = () => {
                         " type="button" onClick={increment}>+</button>
                     </div>
                    
-                    <button className="btn btn-info mx-3 w-100">Add to Cart</button>
+                    <button className="btn btn-info mx-3 w-100" onClick={() => handleAddToCart(product)}>Add to Cart</button>
                     
                 </div>
             </div>

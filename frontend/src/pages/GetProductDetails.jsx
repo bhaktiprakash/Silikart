@@ -12,7 +12,6 @@ const GetProductDetails = () => {
   async function getData(){
     try {
       const res = await ProductApiService.getProductInfo();
-    console.log(res.data);
     if(res.status){
       setProducts(res.data);
     } else{
