@@ -11,6 +11,8 @@ const Profile = () => {
         let res = await studentApiService.userProfile()
         if (res.status) {
             console.log(res.data)
+            let { email, name, orders, sic } = res.data
+            
             setUserProfile(res.data)
         }
     }

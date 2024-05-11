@@ -12,6 +12,17 @@ async function placeOrder(req, res) {
 }
 
     
+async function getAllOrders(req, res) {
+    try {
+      const orders = await order.find();
+      console.log(orders);
+      res.json(orders);
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+}
+
+
 async function getOrders(req, res) {
     try {
       const orders = await order.find({ userId: req.params.userId });
@@ -24,5 +35,6 @@ async function getOrders(req, res) {
   
 module.exports = {
     placeOrder,
-    getOrders
+    getOrders,
+    getAllOrders
 }
