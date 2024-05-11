@@ -38,18 +38,23 @@ const Profile = () => {
             <h3>Welcome to profile page</h3>
             <p>Name: {userProfile.name}</p>
             <p>Email: {userProfile.email}</p>
-            <p>SIC: {userProfile.sic}</p>
+            <p>SIC: {userProfile.sic}</p> 
             <Link to="">Update Password</Link>
         </div>                 
         <div>
             <h2>Orders</h2>
             <ul>
-                    {userProfile.orders.map(order => (
-                        <li key={order._id}>
-                            Product ID:{order.products} , Total Price: {order.totalPrice}
-                            <p>Status: {order.status ? "Picked up" : "Under process"}</p>
+                    {userProfile.orders.map((order) => (
+                        <li key={order?._id}>
+                            <p>Status: {order.status ? 'Picked up' : 'Under process'}</p>
+                            <p>Total Price: {order.totalPrice}</p>
+                            <p>Product IDs:</p>
+                            <ul>
+                                {order.products.map((product) => (
+                                    <li key={product?._id}>{product?._id}</li>
+                                ))}
+                            </ul>
                         </li>
-                        
                     ))}
                 </ul>
         </div>
