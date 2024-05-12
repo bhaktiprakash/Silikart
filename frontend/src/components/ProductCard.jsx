@@ -13,16 +13,16 @@ const ProductCard = ({ product }) => {
     }
 
     return (
-        <div className="card my-3 mx-auto product-card rounded-1" style={{ width: '100%', maxWidth: '18rem' }}>
-      <img src={image} className="img-fluid" alt="Product" style={{ height: '300px', objectFit: 'cover' }} />
+      <div className="card my-4 mx-auto product-card border rounded-2" style={{ maxWidth: '20rem' }}>
+      <img src={image} className="card-img-top img-fluid" alt="Product" style={{ maxHeight: '250px' }} />
       <div className="card-body">
-        <h5 className="card-title fs-4 fw-semibold">{name}</h5>
+        <h5 className="card-title fs-5 fw-bold">{name}</h5>
         {/* <p className="card-text">Serial: {serial}</p> */}
-        {/* <p className="card-text"><span className='fw-semibold'>Availability</span>: {availabilityText}</p> */}
-        <p className="card-text"><span className='fw-semibold'>Duration</span>: {details.duration}</p>
-        <div className="d-grid gap-2">
-          <Link to={`/product/${serial}`} className="btn btn-dark">View Details</Link>
-          <button onClick={() => handleAddToCart(product)} className="btn btn-success">Add to Cart</button>
+        {/* <p className="card-text"><span className='fw-bold'>Availability</span>: {availabilityText}</p> */}
+        <p className="card-text"><span className='fw-bold'>Duration</span>: {details.duration}</p>
+        <div className="d-grid gap-1">
+          <Link to={`/product/${serial}`} className="btn btn-outline-dark">View Details</Link>
+          <button onClick={() => handleAddToCart(product)} className="btn btn-outline-success">Add to Cart</button>
         </div>
       </div>
     </div>

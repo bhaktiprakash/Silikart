@@ -83,7 +83,7 @@ html, body {
   background-image: url('../images/signup.jpg');
   background-size: cover;
   background-position: center;
-  overflow-x: hidden; /* Optional: Prevent horizontal scrollbar */
+  overflow-x: hidden;
   color: black  ;
 }
 
@@ -140,10 +140,6 @@ html, body {
   box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
 
-/* Button Styles */
-
-
-
 
 /* Spacing and Alignment */
 .form-group {
@@ -163,6 +159,14 @@ html, body {
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
+}
+/* cart_summary_box */
+
+.cart-summary-box {
+  border: 1px;
+  
+  padding: 50px;
+  margin: 50px;  
 }
 
 

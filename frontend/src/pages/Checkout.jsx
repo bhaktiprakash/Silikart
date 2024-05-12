@@ -2,16 +2,16 @@ import {useState} from 'react'
 import { useCart } from '../contexts/CartContext' 
 import { useAuth } from '../contexts/AuthContext';
 import orderApiService from '../ApiService/OrderApiService';
+import { MdDelete } from "react-icons/md";
+
 
 const Checkout = () => {
     const authContext = useAuth()
     // console.log(authContext);
-    const {user} = authContext;
+    const {user} = authContext; 
     const userId = user.id;
     const [message, setMessage] = useState('');
-
     const {cart, clearCart} = useCart();
-
     const handlePlaceOrder = async () => {
         try {
           
@@ -42,20 +42,45 @@ const Checkout = () => {
           
         }
       };     
-
+      const totalAmount = cart.reduce((total, item) => total + parseInt(item.price), 0);
   return (
     <div>
-      <h2>Checkout </h2>
-      <ul>
-        {cart.map((item) => (
-            <li key={item.serial}>
-                {item.name} - Rs.{item.price}   
-            </li>
-        ))}
-      </ul>
-      <button onClick={handlePlaceOrder } className='btn btn-primary'>Place Order</button>
-    </div>
-  )
-}
+    <h2 className='text-center fw-bold fs-2 mt-2 mb-5'>CHECKOUT</h2>
+    {cart.length === 0 ? (
+        <p className="text-center">No products added to cart</p>
+    ) : (
+        <div className="row mx-auto">
+            <div className="col-md-6">
+                {cart.map((item) => (
+                    <div key={item.serial} className="d-flex align-items-center mb-3 border border-2 shadow-lg ">
+                        <div className="">
+                            <img src={item.image} className="img-fluid h-25 w-25 my-2 ms-2 rounded-3" alt={item.name} />
+                            
+                        </div>
+                        <div className='col-6'>
+                            <h5 className="fw-normal text-center pt-2">{item.name}</h5>
+                            <p className="fw-bold text-center">Rs.{item.price}</p>
+                            
+                        </div>
+                        <button className="btn px-2 ms-3 fs-5 text-black" onClick={() => handleRemoveItem(item.serial)}><MdDelete /></button>
+                    </div>
+                    
+                ))}
+            </div>
+            <div className="col-md-6">
+                <div className="cart-summary-box rounded-5 shadow-lg">
+                    <div className="text-center">
+                        <h4 className="fw-bold fs-3">Cart Summary</h4>
+                        <p>Total Items: {cart.length}</p>
+                        <p className="fw-bold">Total Price: Rs.{totalAmount}</p>
+                        <button onClick={handlePlaceOrder} className="btn home_detailsbg">Place Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )}
+</div>
+
+)}
 
 export default Checkout
