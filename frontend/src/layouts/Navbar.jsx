@@ -70,7 +70,7 @@ const Navbar = () => {
                             <>
                             <li className="nav-item mx-2">
                             <Link className="nav-link fw-bold text-dark fs-6" to="/profile">
-                                <span style={{ fontSize: '25px', marginLeft: '4px' }}><FaUser /></span><br />Welcome {user.name}
+                                <span style={{ fontSize: '25px', marginLeft: '4px' }}><FaUser /></span><br />Welcome {user?.name}
                             </Link>
                         </li>
                         <li className="nav-item mx-2">
