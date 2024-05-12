@@ -44,16 +44,20 @@ const GetOneProduct = () => {
     if (!product) return <h3>Product not found</h3>;
 
     // Increment quantity function
-    const increment = () => {
-        setQuantity(quantity + 1);
-    };
+    // const increment = () => {
+    //     setQuantity(quantity + 1);
+    // };
 
     // Decrement quantity function
-    const decrement = () => {
-        if (quantity > 1) {
-            setQuantity(quantity - 1);
-        }
-    };
+    // const decrement = () => {
+    //     if (quantity > 1) {
+    //         setQuantity(quantity - 1);
+    //     }
+    // };
+
+    const productCount = () => {
+        alert("Product quantity is limited to 1 to avoid hoarding issues. Thank you for your support and understanding")
+    }
 
     
     return (
@@ -107,10 +111,10 @@ const GetOneProduct = () => {
  
                     
                     <div className="input-group m-3">
-                        <button className="btn btn-info pb-2" type="button" onClick={decrement}>-</button>
+                        <button className="btn btn-info pb-2" type="button" onClick={productCount}>-</button>
                         <input type="text" className="form-control text-center fw-bold" value={quantity} readOnly />
                         <button className="btn btn-info pb-2 addcartbut
-                        " type="button" onClick={increment}>+</button>
+                        " type="button" onClick={productCount}>+</button>
                     </div>
                    
                     <button className="btn btn-info mx-3 w-100" onClick={() => handleAddToCart(product)}>Add to Cart</button>
