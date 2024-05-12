@@ -28,9 +28,10 @@ const HomeDetails = () => {
                                         </p>
                                         <p className="card-body lead fw-semibold"> Every purchase made through our platform is a step towards removing garbage from the environment and fostering a cleaner, greener world for generations to come.Join us in our journey towards a brighter, cleaner future</p>
                                         <br />
-                                        <div className="d-flex justify-content-center mt-3">
-                                            <a href="" to="/" className="btn home_detailsbg">Read More</a>
+                                        <div className="d-flex justify-content-center text-center mt-3">
+                                            <a href="https://www.quickwasters.co.uk/blog/clean-environment/" to="/" className="btn home_detailsbg">Read More</a>
                                         </div>
+                                        
                                     </div>
                                 </div>
                                 {/* Carousel start */}
@@ -41,9 +42,23 @@ const HomeDetails = () => {
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
-        </div>
+            <div className="row g-0 shadow-sm">
+                <div className="col-md-6 ">
+                    <div class="embed-responsive embed-responsive-by9">
+                        <iframe classname="embed-responsive-item " src="https://www.youtube.com/embed/PZ6SgdHQw_g?autoplay=1&mute=1&playsinline=1" height="500px" width="700px"></iframe>
+                    </div>
+                </div>
+                <div className="col-md-6">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14963.122704026026!2d85.806336!3d20.3506773!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1908e064769e73%3A0x9288172f3a98c7a4!2sSilicon%20University!5e0!3m2!1sen!2sin!4v1715443516880!5m2!1sen!2sin" width="900px" height="500px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>           
+                </div>
+
+            </div>
+           
+
+     </div>
     );
 }
 

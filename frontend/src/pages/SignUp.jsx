@@ -44,7 +44,7 @@ const SignUp = () => {
                        
                         <img src={image} className="img-fluid rounded-5" height="400px" width="600px" alt="Welcome Please Sign Up!!!!"  />
                     </div> */}
-                    {/* Right Side (Form) */} 
+                    {/* Right Side (Form) */}
                     <div className="col-12 col-md-6 my-5 py-5 mt-5 opacity-form">
                         <div className="card border-light-subtle shadow-sm rounded-5">
                             <div className="card-body p-3 p-md-4 p-xl-5 ">
@@ -74,6 +74,18 @@ const SignUp = () => {
                                             placeholder='Enter your Email'
                                             value={email}
                                             onChange={(e) => setEmail(e.target.value)}
+                                            required
+                                        />
+                                    </div>
+                                    <div className="mb-3">
+                                        <label htmlFor="email" className="form-label fw-bold">SIC</label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="sic"
+                                            placeholder='Enter your SIC'
+                                            value={sic}
+                                            onChange={(e) => setSIC(e.target.value)}
                                             required
                                         />
                                     </div>
