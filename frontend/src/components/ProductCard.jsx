@@ -1,17 +1,26 @@
 import {useState} from 'react';
 import { Link} from 'react-router-dom';
 import { useCart } from '../contexts/CartContext';
+import { useAuth } from '../contexts/AuthContext';
 
 const ProductCard = ({ product }) => {
     const { serial, name, availability, image, details } = product;
     const availabilityText = availability ? 'Available' : 'Not Available';
 
     const {addToCart} = useCart();
+    const authContext = useAuth();
+    const { user } = authContext;
+
     const handleAddToCart = (product) => {
-      const [isOwner, setIsOwner] = useState(false)
-      addToCart(product);
-      console.log("Product added to cart");
-      alert("Product added to cart")
+      if(user){
+        addToCart(product);
+        console.log("Product added to cart");
+        alert("Product added to cart")
+      }
+      else{
+        alert("Sign in to buy")
+      }
+      
     }
 
     return (

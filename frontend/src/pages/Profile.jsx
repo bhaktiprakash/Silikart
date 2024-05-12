@@ -47,11 +47,14 @@ const Profile = () => {
                     {userProfile.orders.map((order) => (
                         <li key={order?._id}>
                             <p>Status: {order.status ? 'Picked up' : 'Under process'}</p>
-                            <p>Total Price: {order.totalPrice}</p>
-                            <p>Product IDs:</p>
+                            <p>Total Price: Rs. {order.totalPrice}</p>
+                            <p>Product Details:</p>
                             <ul>
                                 {order.products.map((product) => (
-                                    <li key={product?._id}>{product?._id}</li>
+                                    <li key={product?._id}>
+                                        <p>Name: {product?.name}</p>
+                                        <p>Price: Rs. {product?.price}</p>
+                                        </li>
                                 ))}
                             </ul>
                         </li>
