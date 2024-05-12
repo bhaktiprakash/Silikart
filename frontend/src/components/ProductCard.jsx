@@ -25,7 +25,7 @@ const ProductCard = ({ product }) => {
 
     return (
       <div className="card my-4 mx-auto product-card border rounded-2" style={{ maxWidth: '20rem' }}>
-      <img src={image} className="card-img-top img-fluid" alt="Product" style={{ maxHeight: '250px' }} />
+      <img src={image} className="card-img-top img-fluid" alt="Product" style={{ maxHeight: '290px' }} />
       <div className="card-body">
         <h5 className="card-title fs-5 fw-bold">{name}</h5>
         {/* <p className="card-text">Serial: {serial}</p> */}

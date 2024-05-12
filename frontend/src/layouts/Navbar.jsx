@@ -57,40 +57,31 @@ const Navbar = () => {
 
                     <ul className="navbar-nav ms-auto d-flex flex-row">
                         <li className="nav-item mx-2">
-                        <Link className="nav-link fw-bold text-dark fs-6 d-flex flex-column align-items-center" to="/product">
-                            <span style={{ fontSize: '25px' }}><MdProductionQuantityLimits /></span>
-                            <span>Products</span>
-                        </Link>
-                        </li>
-                        {isLoggedIn ? (
-                            <>
-                            <li className="nav-item mx-2">
-                            <Link className="nav-link fw-bold text-dark fs-6" to="/profile">
-                                <span style={{ fontSize: '25px', marginLeft: '4px' }}><FaUser /></span><br />Welcome {user?.name}
+                            <Link className="nav-link fw-bold text-dark fs-6 d-flex flex-column align-items-center" to="/">
+                                <span className='my-3 fs-5'>Home</span> 
                             </Link>
                         </li>
-                        <li className="nav-item mx-2 mt-3 ">
+                        <li className="nav-item mx-2">
                             <Link className="nav-link fw-bold text-dark fs-6 d-flex flex-column align-items-center" to="/product">
-                                Products
+                                <span className='my-3 fs-5'>Products</span>
                             </Link>
                         </li>
-                        {isLoggedIn && (
-                            <li className="nav-item mx-2 mt-3">
-                                <Link className="nav-link fw-bold text-dark fs-6 " to="/checkout">
-                                    Cart
-                                </Link>
-                            </li>
-                        )}
                         {isLoggedIn ? (
-                            // <NavDropdown className="fw-semibold" title={`Hi, ${user.name}`} id="basic-nav-dropdown">
-                            //     <NavDropdown.Item href="#">Profile</NavDropdown.Item>
-                            //     <NavDropdown.Item href="#">Orders</NavDropdown.Item>
-                            //     <NavDropdown.Divider />
-                            //     <NavDropdown.Item onClick={logoutUser}>Logout</NavDropdown.Item>
-                            // </NavDropdown>
                             <>
-                                <li className="nav-link mt-2 fw-semibold fst-italic">Welcome, <span className='mx-3'>{user.name}</span></li>
-                                <li onClick={logoutUser} className="nav-link fw-bold text-dark fs-6  mx-2 mt-3">Logout
+                                <li className="nav-link">
+                                    <Link className="nav-link fw-bold text-dark fs-6" to="/profile">
+                                        <span className='my-3 fs-5'></span>Welcome, {user?.name}
+                                        </Link>
+                                    </li>
+                                    <li className="nav-link">
+                                    <Link className="nav-link fw-bold text-dark" to="/checkout">
+                                        <span className='my-3 fs-5'>Cart</span>
+                                        </Link>
+                                    </li>
+                                <li onClick={logoutUser} className="my-3 nav-link fw-bold text-dark">
+                                    <Link className="nav-link fw-bold text-dark" to="/">
+                                        <span className='my-3 fs-5'>Logout</span>
+                                        </Link>
                                 </li>
                             
                             </>
@@ -100,12 +91,12 @@ const Navbar = () => {
                             <>
                                 <li className="nav-item mx-2 mt-2 py-2">
                                     <Link className="nav-link fw-bold text-dark fs-6" to="/signup">
-                                        Signup
+                                    <span className='my-3 fs-5'>SignUp</span>
                                     </Link>
                                 </li>
                                 <li className="nav-item mx-2 mt-2 py-2">
-                                    <Link className="nav-link fw-bold text-dark fs-6 d-flex flex-column align-items-center" to="/signin">
-                                        Login
+                                    <Link className="nav-link fw-bold text-dark fs-6" to="/signin">
+                                    <span className='my-3 fs-5'>Login</span>
                                     </Link>
                                 </li>
                             </>
