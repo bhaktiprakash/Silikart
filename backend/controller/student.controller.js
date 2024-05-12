@@ -78,6 +78,37 @@ async function deleteStudent(req, res){
         console.log(error);
         res.status(500).json({"message": error.message})
     }
+
+    
+}
+
+const studentProfile = async(req, res) => {
+    try {
+        const profile = await student.aggregate([
+            {
+                $lookup: {
+                    from: "orders",
+                    localField: "_id",
+                    foreignField: "userId",
+                    as: "orders"
+                }
+            },
+            {
+                $match: {
+                    "_id": new mongoose.Types.ObjectId(String(req.user?.id))
+                }
+            }, 
+            {
+                $project: {
+                    "password": 0
+                }
+            }
+        ])
+        res.status(200).json(profile)
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({ error: error })
+    }
 }
 
 module.exports = {
@@ -85,5 +116,6 @@ module.exports = {
     allStudentsInfo,
     updateStudent,
     deleteStudent,
-    loginStudent
+    loginStudent,
+    studentProfile
 }

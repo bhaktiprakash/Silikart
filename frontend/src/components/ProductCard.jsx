@@ -1,15 +1,26 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import {useState} from 'react';
+import { Link} from 'react-router-dom';
 import { useCart } from '../contexts/CartContext';
+import { useAuth } from '../contexts/AuthContext';
 
 const ProductCard = ({ product }) => {
     const { serial, name, availability, image, details } = product;
     const availabilityText = availability ? 'Available' : 'Not Available';
 
     const {addToCart} = useCart();
+    const authContext = useAuth();
+    const { user } = authContext;
+
     const handleAddToCart = (product) => {
-      addToCart(product);
-      console.log("Product added to cart");
+      if(user){
+        addToCart(product);
+        console.log("Product added to cart");
+        alert("Product added to cart")
+      }
+      else{
+        alert("Sign in to buy")
+      }
+      
     }
 
     return (
@@ -23,6 +34,7 @@ const ProductCard = ({ product }) => {
         <div className="d-grid gap-1">
           <Link to={`/product/${serial}`} className="btn btn-outline-dark">View Details</Link>
           <button onClick={() => handleAddToCart(product)} className="btn btn-outline-success">Add to Cart</button>
+
         </div>
       </div>
     </div>

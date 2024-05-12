@@ -8,8 +8,9 @@ import { MdDelete } from "react-icons/md";
 const Checkout = () => {
     const authContext = useAuth()
     // console.log(authContext);
-    const {user} = authContext; 
-    const userId = user.id;
+    const {user} = authContext;
+    const userId = user?.id;
+
     const [message, setMessage] = useState('');
     const {cart, clearCart} = useCart();
     const handlePlaceOrder = async () => {
@@ -21,7 +22,12 @@ const Checkout = () => {
           }, 0).toString();          
           
           // const productIds = await fetchProductIds(cart);
-          const products = cart.map( c => c._id)
+          const products = cart.map( c => ({
+            id: c._id,
+            serial: c.serial,
+            name: c.name,
+            price: c.price
+          }))
           // console.log(productIds);
           const newCart = {
             userId, products, totalPrice

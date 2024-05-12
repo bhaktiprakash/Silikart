@@ -10,12 +10,12 @@ export const AuthProvider = (props) => {
 
     useEffect(()=>{
         const jwttoken = localStorage.getItem("pptoken")
-        console.log(jwttoken)
+        // console.log(jwttoken)
         if(jwttoken){
             setToken(jwttoken)
             setIsLoggedIn(true)
             let decodedData = decodeToken(jwttoken)
-            console.log(decodedData);
+            // console.log(decodedData);
             setUser(decodedData.user)
         }
     }, [])

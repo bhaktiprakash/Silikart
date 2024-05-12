@@ -8,6 +8,7 @@ import { FaRegUser } from "react-icons/fa6";
 import { FaShoppingCart } from "react-icons/fa";
 // import image1 from "../images/Silikart1.jpg";
 // import { NavDropdown } from 'react-bootstrap';
+// import SearchBar from '../components/SearchBar';
 
 
 const Navbar = () => {
@@ -15,7 +16,6 @@ const Navbar = () => {
     const authContext = useAuth()
     console.log(authContext);
     const { isLoggedIn, user, logout} = authContext
-    // console.log(user.name);
 
     const logoutUser = () => {
         logout()
@@ -54,10 +54,19 @@ const Navbar = () => {
     <button className="btn btn-dark shadow-md searchbut" type="submit">Search</button>
 </form>
                     </div>
+
                     <ul className="navbar-nav ms-auto d-flex flex-row">
                         <li className="nav-item mx-2">
-                            <Link className="nav-link fw-bold text-dark fs-6 d-flex flex-column align-items-center mt-3 " to="/">
-                                Home
+                        <Link className="nav-link fw-bold text-dark fs-6 d-flex flex-column align-items-center" to="/product">
+                            <span style={{ fontSize: '25px' }}><MdProductionQuantityLimits /></span>
+                            <span>Products</span>
+                        </Link>
+                        </li>
+                        {isLoggedIn ? (
+                            <>
+                            <li className="nav-item mx-2">
+                            <Link className="nav-link fw-bold text-dark fs-6" to="/profile">
+                                <span style={{ fontSize: '25px', marginLeft: '4px' }}><FaUser /></span><br />Welcome {user.name}
                             </Link>
                         </li>
                         <li className="nav-item mx-2 mt-3 ">
