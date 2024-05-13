@@ -12,7 +12,7 @@ const Checkout = () => {
     const userId = user?.id;
 
     const [message, setMessage] = useState('');
-    const {cart, clearCart} = useCart();
+    const {cart,removeFromCart, clearCart} = useCart();
     const handlePlaceOrder = async () => {
         try {
           
@@ -48,6 +48,11 @@ const Checkout = () => {
           
         }
       };     
+
+      const handleRemoveItem = (id) => {
+        removeFromCart(id)
+      }
+
       const totalAmount = cart.reduce((total, item) => total + parseInt(item.price), 0);
   return (
     <div>
@@ -68,7 +73,7 @@ const Checkout = () => {
                             <p className="fw-bold text-center">Rs.{item.price}</p>
                             
                         </div>
-                        <button className="btn px-2 ms-3 fs-5 text-black" onClick={() => handleRemoveItem(item.serial)}><MdDelete /></button>
+                        <button className="btn px-2 ms-3 fs-5 text-black" onClick={() => handleRemoveItem(item._id)}><MdDelete /></button>
                     </div>
                     
                 ))}
