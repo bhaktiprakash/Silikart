@@ -70,7 +70,7 @@ const Navbar = () => {
 
                             <>
                                 <li className="nav-link mt-2 fw-semibold">
-                                    <Link className="nav-link fw-bold text-dark fs-6 " to="/profile">
+                                     <Link className="nav-link fw-bold text-dark fs-6" to="/profile">
                                     Welcome, <span className='mx-3'>{user?.name}</span>
                                     </Link>   
                                 </li>
@@ -79,7 +79,7 @@ const Navbar = () => {
                                     Cart
                                 </Link>
                             </li>
-                                <li onClick={logoutUser} className="nav-link fw-bold text-dark fs-6 mx-2 mt-3">
+                                <li onClick={logoutUser} className="nav-link fw-bold text-dark fs-6 mx-2 mt-2">
                                 <Link className="nav-link fw-bold text-dark fs-6 ">
                                     Logout
                                 </Link>
