@@ -11,7 +11,7 @@ const Checkout = () => {
     const userId = user?.id;
 
     const [message, setMessage] = useState('');
-    const {cart, removeFromCart, clearCart} = useCart();
+    const {cart, removeFromCart,removeFromCart, clearCart} = useCart();
     const handlePlaceOrder = async () => {
         try { 
           const totalPrice = cart.reduce((total, item) => {
@@ -47,6 +47,11 @@ const Checkout = () => {
       const handleRemoveItem = (id) => {
         removeFromCart(id)
       }
+
+      const handleRemoveItem = (id) => {
+        removeFromCart(id)
+      }
+
       const totalAmount = cart.reduce((total, item) => total + parseInt(item.price), 0);
   return (
     <div>

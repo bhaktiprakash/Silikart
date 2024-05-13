@@ -8,7 +8,6 @@ import { FaRegUser } from "react-icons/fa6";
 import { FaShoppingCart } from "react-icons/fa";
 // import image1 from "../images/Silikart1.jpg";
 // import { NavDropdown } from 'react-bootstrap';
-// import SearchBar from '../components/SearchBar';
 
 
 const Navbar = () => {
@@ -16,6 +15,7 @@ const Navbar = () => {
     const authContext = useAuth()
     console.log(authContext);
     const { isLoggedIn, user, logout} = authContext
+    // console.log(user.name);
 
     const logoutUser = () => {
         logout()
@@ -54,9 +54,10 @@ const Navbar = () => {
     <button className="btn btn-dark shadow-md searchbut" type="submit">Search</button>
 </form>
                     </div>
-
                     <ul className="navbar-nav ms-auto d-flex flex-row">
                         <li className="nav-item mx-2">
+                            <Link className="nav-link fw-bold text-dark fs-6 d-flex flex-column align-items-center mt-3 " to="/">
+                                Home
                             <Link className="nav-link fw-bold text-dark fs-6 d-flex flex-column align-items-center" to="/">
                                 <span className='my-3 fs-5'>Home</span> 
                             </Link>
@@ -66,6 +67,24 @@ const Navbar = () => {
                                 <span className='my-3 fs-5'>Products</span>
                             </Link>
                         </li>
+                        
+                        {isLoggedIn ? (
+
+                            <>
+                                <li className="nav-link mt-2 fw-semibold">
+                                     <Link className="nav-link fw-bold text-dark fs-6" to="/profile">
+                                    Welcome, <span className='mx-3'>{user?.name}</span>
+                                    </Link>   
+                                </li>
+                                <li className="nav-item mx-2 mt-3">
+                                <Link className="nav-link fw-bold text-dark fs-6 " to="/checkout">
+                                    Cart
+                                </Link>
+                            </li>
+                                <li onClick={logoutUser} className="nav-link fw-bold text-dark fs-6 mx-2 mt-2">
+                                <Link className="nav-link fw-bold text-dark fs-6 ">
+                                    Logout
+                                </Link>
                         {isLoggedIn ? (
                             <>
                                 <li className="nav-link">
