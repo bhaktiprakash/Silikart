@@ -56,9 +56,7 @@ const Navbar = () => {
                     </div>
                     <ul className="navbar-nav ms-auto d-flex flex-row">
                         <li className="nav-item mx-2">
-                            <Link className="nav-link fw-bold text-dark fs-6 d-flex flex-column align-items-center mt-3 " to="/">
-                                Home
-                            </Link>
+                            
                             <Link className="nav-link fw-bold text-dark fs-6 d-flex flex-column align-items-center" to="/">
                                 <span className='my-3 fs-5'>Home</span> 
                             </Link>
