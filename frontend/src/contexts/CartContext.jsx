@@ -8,6 +8,7 @@ export const CartProvider = ({ children }) => {
     const addToCart = (product) => {
         setCart([...cart, product])
         console.log(cart);
+        
     }
 
     const removeFromCart = (productId) => {
