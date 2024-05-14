@@ -57,21 +57,21 @@ const Profile = () => {
                     <h2 className="text-black text-center mt-5 fw-bold">Your Orders</h2>
                     <ul className="list-unstyled mt-3">
                         {userProfile.orders.map((order) => (
-                            <li key={order?._id} className="card mb-3">
+                            <li key={order?._id} className="card my-2  mb-3">
                                 <div className="card-body">
-                                    <p>Product Details:</p>
+                                    <p className='fw-bold'>PRODUCT DETAILS:</p>
                                     
                                     
-                                    <ul className="list-unstyled">
+                                    <div className="px-2  mt-1">
                                         {order.products.map((product) => (
-                                            <li key={product?._id}>
-                                                <p>Name: {product?.name}</p>
-                                                <p>Price: Rs. {product?.price}</p>
-                                                <p>Status: {order.status ? 'Picked up' : 'Under process'}</p>
-                                                <p>Total Price: Rs. {order.totalPrice}</p>
+                                            <li key={product?._id } className="m-2">
+                                                <h1 className='fs-6'>Product: {product?.name}</h1>
+                                                <h1 className='fs-6'>Price: Rs. {product?.price}</h1>
+                                                <h1 className='fs-6'>Status: {order.status ? 'Picked up' : 'Under process'}</h1>
+                                                <h1 className='fs-6'>Total Price: Rs. {order.totalPrice}</h1>
                                             </li>
                                         ))}
-                                    </ul>
+                                    </div>
                                 </div>
                             </li>
                         ))}

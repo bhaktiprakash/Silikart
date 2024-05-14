@@ -70,8 +70,8 @@ const Navbar = () => {
 
                             <>
                                 <li className="nav-link mt-2 fw-semibold">
-                                     <Link className="nav-link fw-bold text-dark fs-6" to="/profile">
-                                    Welcome, <span className='mx-3'>{user?.name}</span>
+                                     <Link className="nav-link fw-bold text-black fs-6" to="/profile">
+                                    Welcome, <span className='fw-bold'>{user?.name}</span>
                                     </Link>   
                                 </li>
                                 <li className="nav-item mx-2 mt-3">
