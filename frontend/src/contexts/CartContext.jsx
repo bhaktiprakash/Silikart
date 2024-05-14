@@ -15,6 +15,7 @@ export const CartProvider = ({ children }) => {
            
         }
         console.log(cart);
+        
     }
 
     const removeFromCart = (productId) => {

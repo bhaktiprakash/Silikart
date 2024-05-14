@@ -69,20 +69,20 @@ const Navbar = () => {
                         
                         {isLoggedIn ? (
                             <>
-                                <li className="nav-link">
-                                    <Link className="nav-link fw-bold text-dark fs-6" to="/profile">
-                                        <span className='my-3 fs-5'></span>Welcome, {user?.name}
-                                        </Link>
-                                    </li>
-                                    <li className="nav-link">
-                                    <Link className="nav-link fw-bold text-dark" to="/checkout">
-                                        <span className='my-3 fs-5'>Cart</span>
-                                        </Link>
-                                    </li>
-                                <li onClick={logoutUser} className="my-3 nav-link fw-bold text-dark">
-                                    <Link className="nav-link fw-bold text-dark" to="/">
-                                        <span className='my-3 fs-5'>Logout</span>
-                                        </Link>
+                                <li className="nav-link mt-2 fw-semibold">
+                                     <Link className="nav-link fw-bold text-black fs-6" to="/profile">
+                                    Welcome, <span className='fw-bold'>{user?.name}</span>
+                                    </Link>   
+                                </li>
+                                <li className="nav-item mx-2 mt-3">
+                                <Link className="nav-link fw-bold text-dark fs-6 " to="/checkout">
+                                    Cart
+                                </Link>
+                            </li>
+                                <li onClick={logoutUser} className="nav-link fw-bold text-dark fs-6 mx-2 mt-2">
+                                <Link className="nav-link fw-bold text-dark fs-6 ">
+                                    Logout
+                                </Link>
                                 </li>
                             
                             </>
