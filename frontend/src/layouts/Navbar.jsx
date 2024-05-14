@@ -58,6 +58,7 @@ const Navbar = () => {
                         <li className="nav-item mx-2">
                             <Link className="nav-link fw-bold text-dark fs-6 d-flex flex-column align-items-center mt-3 " to="/">
                                 Home
+                            </Link>
                             <Link className="nav-link fw-bold text-dark fs-6 d-flex flex-column align-items-center" to="/">
                                 <span className='my-3 fs-5'>Home</span> 
                             </Link>
@@ -68,23 +69,6 @@ const Navbar = () => {
                             </Link>
                         </li>
                         
-                        {isLoggedIn ? (
-
-                            <>
-                                <li className="nav-link mt-2 fw-semibold">
-                                     <Link className="nav-link fw-bold text-dark fs-6" to="/profile">
-                                    Welcome, <span className='mx-3'>{user?.name}</span>
-                                    </Link>   
-                                </li>
-                                <li className="nav-item mx-2 mt-3">
-                                <Link className="nav-link fw-bold text-dark fs-6 " to="/checkout">
-                                    Cart
-                                </Link>
-                            </li>
-                                <li onClick={logoutUser} className="nav-link fw-bold text-dark fs-6 mx-2 mt-2">
-                                <Link className="nav-link fw-bold text-dark fs-6 ">
-                                    Logout
-                                </Link>
                         {isLoggedIn ? (
                             <>
                                 <li className="nav-link">
