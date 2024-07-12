@@ -47,9 +47,9 @@ We aim to organize the communication between the needy and needful with our proj
 
 2. **Install the dependencies for both frontend and backend:**
    ```bash
-   cd client
+   cd frontend
    npm install
-   cd ../server
+   cd backend
    npm install
    ```
 
