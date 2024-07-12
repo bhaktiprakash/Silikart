@@ -56,18 +56,18 @@ const Navbar = () => {
                     </div>
                     <ul className="navbar-nav ms-auto d-flex flex-row">
                         <li className="nav-item mx-2">
-                            <Link className="nav-link fw-bold text-dark fs-6 d-flex flex-column align-items-center mt-3 " to="/">
-                                Home
+                            
+                            <Link className="nav-link fw-bold text-dark fs-6 d-flex flex-column align-items-center" to="/">
+                                <span className='my-3 fs-5'>Home</span> 
                             </Link>
                         </li>
-                        <li className="nav-item mx-2 mt-3 ">
+                        <li className="nav-item mx-2">
                             <Link className="nav-link fw-bold text-dark fs-6 d-flex flex-column align-items-center" to="/product">
-                                Products
+                                <span className='my-3 fs-5'>Products</span>
                             </Link>
                         </li>
                         
                         {isLoggedIn ? (
-
                             <>
                                 <li className="nav-link mt-2 fw-semibold">
                                      <Link className="nav-link fw-bold text-black fs-6" to="/profile">
@@ -92,12 +92,12 @@ const Navbar = () => {
                             <>
                                 <li className="nav-item mx-2 mt-2 py-2">
                                     <Link className="nav-link fw-bold text-dark fs-6" to="/signup">
-                                        Signup
+                                    <span className='my-3 fs-5'>SignUp</span>
                                     </Link>
                                 </li>
                                 <li className="nav-item mx-2 mt-2 py-2">
-                                    <Link className="nav-link fw-bold text-dark fs-6 d-flex flex-column align-items-center" to="/signin">
-                                        Login
+                                    <Link className="nav-link fw-bold text-dark fs-6" to="/signin">
+                                    <span className='my-3 fs-5'>Login</span>
                                     </Link>
                                 </li>
                             </>

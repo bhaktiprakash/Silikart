@@ -6,7 +6,14 @@ export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
 
     const addToCart = (product) => {
-        setCart([...cart, product])
+        const isProductInCart = cart.some(item => item.serial === product.serial);
+        if(isProductInCart){
+            alert("Product already in cart")
+        }
+        else{
+            setCart([...cart, product])
+            alert("Product added to cart")           
+        }
         console.log(cart);
         
     }
