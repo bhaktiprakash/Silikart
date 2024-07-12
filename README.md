@@ -41,7 +41,7 @@ We aim to organize the communication between the needy and needful with our proj
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/silikart.git
+   git clone https://github.com/swatinath/silikart.git
    cd silikart
    ```
 
@@ -62,10 +62,10 @@ We aim to organize the communication between the needy and needful with our proj
 
 4. **Run the development server:**
    ```bash
-   # In the client directory
-   npm start
+   # In the backend directory
+   npm run server
 
-   # In the server directory
+   # In the frontend directory
    npm run dev
    ```
 
