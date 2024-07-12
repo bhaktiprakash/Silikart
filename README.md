@@ -1,4 +1,4 @@
-# 🌟 Silikart 🌟
+#  Silikart 
 
 ![MERN Stack](https://img.shields.io/badge/MERN-Stack-green) ![Node.js](https://img.shields.io/badge/Node.js-16.0.0-green) ![React](https://img.shields.io/badge/React-17.0.0-blue) ![MongoDB](https://img.shields.io/badge/MongoDB-4.4.0-green) ![Express.js](https://img.shields.io/badge/Express.js-4.17.1-green)
 
