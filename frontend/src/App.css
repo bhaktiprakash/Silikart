@@ -110,7 +110,7 @@ html, body {
 .card {
     /* applied on products page */
     overflow: hidden;
-    box-shadow: 4px 2px 2px 4px rgba(255, 209, 23, 0.865);
+    /* box-shadow: 4px 2px 2px 4px rgba(255, 209, 23, 0.865); */
     
 }
 /* opacity_sign_in */
