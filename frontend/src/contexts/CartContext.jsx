@@ -12,7 +12,7 @@ export const CartProvider = ({ children }) => {
         }
         else{
             setCart([...cart, product])
-           
+            alert("Product added to cart")           
         }
         console.log(cart);
         

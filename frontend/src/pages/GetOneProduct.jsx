@@ -43,18 +43,6 @@ const GetOneProduct = () => {
 
     if (!product) return <h3>Product not found</h3>;
 
-    // Increment quantity function
-    // const increment = () => {
-    //     setQuantity(quantity + 1);
-    // };
-
-    // Decrement quantity function
-    // const decrement = () => {
-    //     if (quantity > 1) {
-    //         setQuantity(quantity - 1);
-    //     }
-    // };
-
     const productCount = () => {
         alert("Product quantity is limited to 1 to avoid hoarding issues. Thank you for your support and understanding")
     }
