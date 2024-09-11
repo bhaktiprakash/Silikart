@@ -2,7 +2,7 @@ import axios from "axios"
 
 class ProdcutApiService {
     constructor(){
-        this.api = "http://localhost:5000"
+        this.api = "https://silikart.onrender.com"
     }
     async getProductInfo(){
         try {
