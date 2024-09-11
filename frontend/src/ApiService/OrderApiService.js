@@ -3,7 +3,7 @@ import { getToken } from "../utils/helperFunctions";
 
 class OrderApiService{
     constructor(){
-        this.api = "http://localhost:5000"
+        this.api = "https://silikart.onrender.com"
     }
 
     async addOrder(cart){
